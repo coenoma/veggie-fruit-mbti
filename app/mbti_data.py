@@ -165,7 +165,9 @@ personality_types = {
 - 事務処理やデータ管理
 - 伝統を守り、安定した環境を築く
 - 実務的な仕事に貢献する''',
-        'color': '#F5F5F5'
+        'color': '#F5F5F5',
+        'compatible_types': ['ENFP', 'ESFP', 'INFP'],
+        'compatibility_reason': '堅実さと創造性の組み合わせにより、アイデアを現実的な形にできます。'
     },
     'ESFJ': {
         'fruit': 'いちご',
@@ -180,7 +182,9 @@ personality_types = {
 - 接客業やサービス業
 - 教育や福祉分野
 - 人々とのコミュニケーションを円滑に進める''',
-        'color': '#FF69B4'
+        'color': '#FF69B4',
+        'compatible_types': ['INFP', 'ISFP', 'INTP'],
+        'compatibility_reason': '感情的知性と分析力の組み合わせにより、思いやりのある効果的な解決策を生み出せます。'
     },
     'ISFJ': {
         'fruit': 'バナナ',
@@ -195,7 +199,9 @@ personality_types = {
 - 医療や介護分野
 - 教育や保育分野
 - 人々を支える仕事''',
-        'color': '#FFD700'
+        'color': '#FFD700',
+        'compatible_types': ['ENTP', 'ESTP', 'ENFJ'],
+        'compatibility_reason': '安定性と行動力の組み合わせにより、思いやりのある実践的なアプローチが可能です。'
     },
     'ESTP': {
         'fruit': '唐辛子',
@@ -210,7 +216,9 @@ personality_types = {
 - 営業やマーケティング
 - スポーツやエンターテイメント
 - 変化を楽しめる仕事''',
-        'color': '#FF4500'
+        'color': '#FF4500',
+        'compatible_types': ['ISFJ', 'ISTJ', 'INFJ'],
+        'compatibility_reason': '行動力と慎重さの組み合わせにより、バランスの取れた効果的な行動が可能です。'
     },
     'ISTP': {
         'fruit': 'ごぼう',
@@ -225,7 +233,9 @@ personality_types = {
 - 技術職やエンジニア
 - 修理やメンテナンス
 - 問題解決に役立つ仕事''',
-        'color': '#8B4513'
+        'color': '#8B4513',
+        'compatible_types': ['ENFJ', 'ENTJ', 'ESFP'],
+        'compatibility_reason': '実践力とリーダーシップの組み合わせにより、効率的なプロジェクト遂行が可能です。'
     },
     'ESFP': {
         'fruit': 'オレンジ',
@@ -240,7 +250,9 @@ personality_types = {
 - エンターテイメントや芸術分野
 - 広報やイベント企画
 - 人々との交流を楽しむ仕事''',
-        'color': '#FFA500'
+        'color': '#FFA500',
+        'compatible_types': ['ISTJ', 'ISTP', 'INFJ'],
+        'compatibility_reason': '明るさと落ち着きの組み合わせにより、楽しく安定した環境を作り出せます。'
     },
     'ISFP': {
         'fruit': 'もも',
@@ -255,7 +267,9 @@ personality_types = {
 - 芸術やデザイン分野
 - ファッションや音楽
 - 自分らしい表現方法で世界と繋がる''',
-        'color': '#FFB6C1'
+        'color': '#FFB6C1',
+        'compatible_types': ['ENFJ', 'ESFJ', 'ENTJ'],
+        'compatibility_reason': '感性とリーダーシップの組み合わせにより、創造的なプロジェクトを成功に導けます。'
     }
 }
 

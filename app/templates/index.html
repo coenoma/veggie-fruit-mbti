@@ -4,17 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>野菜・果物で診断するMBTI性格診断テスト</title>
-    <meta name="description" content="あなたの性格を野菜や果物で表現するMBTI診断テスト">
-    <meta property="og:title" content="野菜・果物で診断するMBTI性格診断テスト">
-    <meta property="og:description" content="あなたの性格を野菜や果物で表現するMBTI診断テスト">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ request.url }}">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
 </head>
 <body class="bg-background-light font-sans">
     <div class="container-base">
-        {% block content %}
         <div class="text-center">
             <h1 class="heading-1">あなたの性格を野菜や果物で表現してみよう！</h1>
             <p class="body-large mb-8">MBTIであなたに合う野菜・果物を見つけましょう！</p>
@@ -25,13 +19,12 @@
                          class="max-h-64 mx-auto mb-8 animate-pulse-soft"
                          loading="lazy">
                     <p class="body-regular mb-6">楽しい性格診断テストで、あなたの野菜・果物の分身を見つけましょう！</p>
-                    <a href="{{ url_for('quiz.quiz') }}" class="btn-primary inline-block">
+                    <a href="{{ url_for('quiz') }}" class="btn-primary inline-block">
                         診断をはじめる！
                     </a>
                 </div>
             </div>
         </div>
-        {% endblock %}
     </div>
 </body>
 </html>

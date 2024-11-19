@@ -44,7 +44,6 @@ function submitAnswer(answer) {
         button.classList.add('opacity-50', 'cursor-not-allowed');
     });
 
-    // エラーハンドリングの追加
     fetch('/quiz/submit_answer', {
         method: 'POST',
         headers: {
@@ -61,7 +60,6 @@ function submitAnswer(answer) {
     .then(data => {
         currentQuestion++;
         if (currentQuestion < totalQuestions) {
-            // フェードアウトしてから次の質問を表示
             const questionContainer = document.getElementById('question-container');
             questionContainer.classList.add('opacity-0', 'translate-y-4');
             

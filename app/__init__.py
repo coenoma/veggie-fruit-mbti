@@ -9,7 +9,7 @@ class Base(DeclarativeBase):
 db = SQLAlchemy(model_class=Base)
 
 def create_app(config_object=None):
-    app = Flask(__name__, static_folder='../static')
+    app = Flask(__name__)
     
     # Default configuration
     app.secret_key = os.environ.get("FLASK_SECRET_KEY") or "a secret key"
