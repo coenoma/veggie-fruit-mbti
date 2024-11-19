@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}ページが見つかりません{% endblock %}
+{% block description %}申し訳ありません。お探しのページは見つかりませんでした。{% endblock %}
+
+{% block content %}
+<div class="flex-center min-h-[60vh] flex-col">
+    <h1 class="heading-1 mb-4">404 - ページが見つかりません</h1>
+    <p class="body-large mb-8">申し訳ありません。お探しのページは見つかりませんでした。</p>
+    <a href="{{ url_for('main.index') }}" class="btn-primary">
+        トップページに戻る
+    </a>
+</div>
+{% endblock %}

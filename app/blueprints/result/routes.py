@@ -34,4 +34,12 @@ def result():
                            
     except Exception as e:
         flash('エラーが発生しました。もう一度お試しください。', 'error')
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
+
+@bp.errorhandler(404)
+def not_found_error(error):
+    return render_template('errors/404.html'), 404
+
+@bp.errorhandler(500)
+def internal_error(error):
+    return render_template('errors/500.html'), 500
