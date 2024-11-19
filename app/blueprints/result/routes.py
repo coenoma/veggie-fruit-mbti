@@ -1,4 +1,4 @@
-from flask import render_template, session, redirect, url_for, flash
+from flask import render_template, session, redirect, url_for, flash, current_app as app
 from app.blueprints.result import bp
 from app.mbti_data import personality_types
 
@@ -6,7 +6,7 @@ from app.mbti_data import personality_types
 def result():
     try:
         answers = session.get('answers', [])
-        if len(answers) < 12:
+        if not answers:
             flash('診断を最初からやり直してください。', 'error')
             return redirect(url_for('quiz.quiz'))
         
@@ -25,16 +25,21 @@ def result():
         personality = personality_types.get(mbti_type, {
             'fruit': '不明',
             'description': '申し訳ありません。結果を計算できませんでした。',
-            'color': '#f97316'  # primary-500のオレンジ
+            'color': '#f97316'
         })
+        
+        # セッションをクリア
+        session.pop('answers', None)
         
         return render_template('result.html', 
                            mbti_type=mbti_type,
-                           personality=personality)
+                           personality=personality,
+                           personality_types=personality_types)
                            
     except Exception as e:
+        app.logger.error(f'Result calculation error: {str(e)}')
         flash('エラーが発生しました。もう一度お試しください。', 'error')
-        return redirect(url_for('main.index'))
+        return redirect(url_for('quiz.quiz'))
 
 @bp.errorhandler(404)
 def not_found_error(error):
