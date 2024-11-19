@@ -12,7 +12,9 @@ personality_types = {
 - プロジェクトマネジメントで才能を発揮
 - 長期的な視野を持った計画立案
 - チーム全体の成長をサポート''',
-        'color': '#FFD700'
+        'color': '#FFD700',
+        'compatible_types': ['INTP', 'ISTP', 'INFP'],
+        'compatibility_reason': '論理的思考と直感的なアイデアの相互補完により、革新的なプロジェクトを成功に導くことができます。'
     },
     'INTJ': {
         'fruit': 'アボカド',
@@ -27,7 +29,9 @@ personality_types = {
 - 戦略的な企画立案
 - 複雑な問題の解決
 - 知識と経験を活かした独自の方法論の確立''',
-        'color': '#2E8B57'
+        'color': '#2E8B57',
+        'compatible_types': ['ENFP', 'ENTP', 'INFP'],
+        'compatibility_reason': '直感的な理解と論理的な分析のバランスにより、革新的なアイデアを現実化できます。'
     },
     'ENTP': {
         'fruit': 'ライム',
@@ -42,7 +46,9 @@ personality_types = {
 - 新規事業の企画や開発
 - 複雑な問題に対する斬新な解決策の提案
 - 変化を楽しめる環境でのリーダーシップ''',
-        'color': '#32CD32'
+        'color': '#32CD32',
+        'compatible_types': ['INTJ', 'INFJ', 'ISFJ'],
+        'compatibility_reason': '創造性と実践力の組み合わせにより、革新的なアイデアを実現できます。'
     },
     'INTP': {
         'fruit': 'キウイ',
@@ -57,7 +63,9 @@ personality_types = {
 - 研究開発や技術革新
 - データ分析や複雑なシステムの設計
 - 複雑な問題の解決に独自の理論を適用''',
-        'color': '#556B2F'
+        'color': '#556B2F',
+        'compatible_types': ['ENTJ', 'ESTJ', 'ENFJ'],
+        'compatibility_reason': '論理的思考と実行力の組み合わせにより、理論を実践に活かすことができます。'
     },
     'ENFJ': {
         'fruit': 'マンゴー',
@@ -72,7 +80,9 @@ personality_types = {
 - 人材育成やチームビルディング
 - コミュニケーションを円滑に進める
 - 人々の潜在能力を引き出す指導者''',
-        'color': '#FF8C00'
+        'color': '#FF8C00',
+        'compatible_types': ['INTP', 'ISFP', 'ISTP'],
+        'compatibility_reason': '感情的知性と論理的思考の組み合わせにより、効果的なチームビルディングが可能です。'
     },
     'INFJ': {
         'fruit': 'イチジク',
@@ -87,7 +97,9 @@ personality_types = {
 - 人材育成やカウンセリング
 - 創造的な仕事や芸術活動
 - 社会問題の解決に貢献する活動''',
-        'color': '#800080'
+        'color': '#800080',
+        'compatible_types': ['ENFP', 'ENTP', 'INTJ'],
+        'compatibility_reason': '直感と共感の力を活かし、理想を現実に変える力を持ちます。'
     },
     'ENFP': {
         'fruit': 'パッションフルーツ',
@@ -102,7 +114,9 @@ personality_types = {
 - エンターテイメントや芸術分野
 - 新しいアイデアを生み出す起業家
 - 人々を笑顔にする仕事''',
-        'color': '#FF1493'
+        'color': '#FF1493',
+        'compatible_types': ['INTJ', 'INFJ', 'ISTJ'],
+        'compatibility_reason': '情熱と計画性の組み合わせにより、創造的なアイデアを形にできます。'
     },
     'INFP': {
         'fruit': 'ブルーベリー',
@@ -117,7 +131,9 @@ personality_types = {
 - 芸術や創作活動
 - 人々をサポートする仕事
 - 自分の信念に基づいた活動''',
-        'color': '#4169E1'
+        'color': '#4169E1',
+        'compatible_types': ['ENFJ', 'ENTJ', 'ESFJ'],
+        'compatibility_reason': '感性と行動力の組み合わせにより、理想を現実に変えることができます。'
     },
     'ESTJ': {
         'fruit': 'りんご',
@@ -132,7 +148,9 @@ personality_types = {
 - 経営や管理職
 - 事務処理や組織運営
 - 計画的な仕事を進める''',
-        'color': '#DC143C'
+        'color': '#DC143C',
+        'compatible_types': ['INTP', 'ISFP', 'INFP'],
+        'compatibility_reason': '実行力と創造性の組み合わせにより、効率的なプロジェクト管理が可能です。'
     },
     'ISTJ': {
         'fruit': '大根',
@@ -226,7 +244,7 @@ personality_types = {
     },
     'ISFP': {
         'fruit': 'もも',
-        'description': '''ももののように、優しく繊細な感性を持つアーティスト。美しさや調和を大切にし、独自の表現方法で感動を与えます。
+        'description': '''もものように、優しく繊細な感性を持つアーティスト。美しさや調和を大切にし、独自の表現方法で感動を与えます。
 
 特徴：
 - 感性豊かで、美意識が高い
