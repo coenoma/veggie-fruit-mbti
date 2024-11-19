@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>診断結果 - MBTI性格診断テスト</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+</head>
+<body class="bg-background-light font-sans">
+    <div class="container-base">
+        <div class="result-card bg-background-light">
+            <h1 class="heading-2">あなたのタイプは {{ mbti_type }} です！</h1>
+            <h2 class="heading-2 text-primary-600">あなたの野菜・果物: {{ personality.fruit }}</h2>
+            <div class="fruit-image mx-auto mb-8 animate-pulse-soft">
+                <img src="{{ url_for('static', filename='images/fruits.svg') }}" 
+                     alt="野菜と果物" 
+                     class="max-h-64 mx-auto"
+                     loading="lazy">
+            </div>
+            <p class="body-regular mb-8">{{ personality.description }}</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button onclick="share('twitter')" class="btn-twitter flex items-center">
+                    <span>Twitterでシェア</span>
+                </button>
+                <button onclick="share('facebook')" class="btn-facebook flex items-center">
+                    <span>Facebookでシェア</span>
+                </button>
+            </div>
+            
+            <a href="{{ url_for('quiz.quiz') }}" class="btn-outline inline-block">
+                もう一度診断する
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Define the personality data from Jinja template
+        const personalityData = {
+            mbtiType: "{{ mbti_type }}",
+            fruit: "{{ personality.fruit }}",
+            description: "{{ personality.description }}"
+        };
+
+        function share(platform) {
+            const text = `私は${personalityData.fruit}タイプ (${personalityData.mbtiType}) でした！あなたは何の野菜・果物？`;
+            const url = window.location.href;
+            
+            if (platform === 'twitter') {
+                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`);
+            } else if (platform === 'facebook') {
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+            }
+        }
+    </script>
+</body>
+</html>

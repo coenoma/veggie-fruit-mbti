@@ -1,0 +1,20 @@
+@layer components {
+  .btn-base {
+    @apply font-bold py-3 px-8 rounded-full transform transition-all duration-300 ease-in-out;
+  }
+  .btn-primary {
+    @apply btn-base bg-primary-500 text-white hover:bg-primary-600 hover:-translate-y-1 shadow-soft;
+  }
+  .btn-secondary {
+    @apply btn-base bg-gray-100 text-gray-700 hover:bg-gray-200 hover:-translate-y-1 shadow-soft;
+  }
+  .btn-outline {
+    @apply btn-base border-2 border-primary-300 text-primary-500 hover:bg-primary-50 hover:border-primary-400 hover:text-primary-600;
+  }
+  .btn-twitter {
+    @apply btn-base bg-[#1DA1F2] text-white hover:bg-[#1a91da] hover:-translate-y-1 shadow-soft;
+  }
+  .btn-facebook {
+    @apply btn-base bg-[#4267B2] text-white hover:bg-[#365899] hover:-translate-y-1 shadow-soft;
+  }
+}

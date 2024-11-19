@@ -1,0 +1,42 @@
+@layer components {
+  .animate-fade-up {
+    @apply animate-[fadeUp_0.5s_ease-out];
+  }
+  .animate-slide-in {
+    @apply animate-[slideIn_0.3s_ease-out];
+  }
+  .animate-pulse-soft {
+    @apply animate-[pulseSoft_2s_ease-in-out_infinite];
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}

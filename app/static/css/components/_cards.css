@@ -1,0 +1,14 @@
+@layer components {
+  .card-base {
+    @apply bg-white rounded-3xl shadow-soft p-8 border border-primary-100;
+  }
+  .card-primary {
+    @apply card-base bg-white;
+  }
+  .card-result {
+    @apply card-base bg-white/95 backdrop-blur-sm border-primary-100;
+  }
+  .result-card {
+    @apply card-base bg-white/95 backdrop-blur-sm border-primary-100;
+  }
+}
