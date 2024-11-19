@@ -50,7 +50,12 @@ def result():
     mbti_type += 'T' if t_score >= 3 else 'F'
     mbti_type += 'J' if j_score >= 3 else 'P'
 
-    personality = personality_types.get(mbti_type, {})
+    personality = personality_types.get(mbti_type, {
+        'fruit': '不明',
+        'description': '申し訳ありません。結果を計算できませんでした。',
+        'color': '#f97316'  # primary-500のオレンジ
+    })
+    
     return render_template('result.html', 
                          mbti_type=mbti_type,
                          personality=personality)

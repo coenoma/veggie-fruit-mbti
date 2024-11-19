@@ -30,7 +30,7 @@
     @apply card-base bg-white;
   }
   .card-result {
-    @apply card-base bg-opacity-95 backdrop-blur-sm;
+    @apply card-base bg-white/95 backdrop-blur-sm border-primary-100;
   }
 
   /* Button system */
@@ -76,7 +76,7 @@
   }
 
   .result-card {
-    @apply card-result mx-auto max-w-2xl animate-slide-in;
+    @apply card-base bg-white/95 backdrop-blur-sm border-primary-100;
   }
 }
 
