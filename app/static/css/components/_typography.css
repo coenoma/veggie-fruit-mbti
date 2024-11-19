@@ -1,14 +1,23 @@
 @layer components {
   .heading-1 {
-    @apply text-4xl md:text-5xl font-bold text-gray-800 mb-4;
+    @apply text-h1 md:text-[1.25rem] font-bold text-gray-800 mb-4;  /* 24px, sp: 20px */
   }
   .heading-2 {
-    @apply text-3xl md:text-4xl font-semibold text-gray-800 mb-3;
+    @apply text-h2 md:text-[1.125rem] font-semibold text-gray-800 mb-3;  /* 20px, sp: 18px */
   }
-  .body-large {
-    @apply text-xl text-gray-600;
+  .heading-3 {
+    @apply text-h3 md:text-lg font-medium text-gray-800 mb-2;  /* 18px, sp: 16px */
   }
-  .body-regular {
-    @apply text-lg text-gray-700;
+  .text-large {
+    @apply text-lg text-gray-600;  /* 16px */
+  }
+  .text-regular {
+    @apply text-base text-gray-700;  /* 14px */
+  }
+  .text-small {
+    @apply text-sm text-gray-500;  /* 12px */
+  }
+  .text-tiny {
+    @apply text-xs text-gray-400;  /* 9px */
   }
 }

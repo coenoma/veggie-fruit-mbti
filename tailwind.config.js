@@ -10,15 +10,13 @@ module.exports = {
         sans: ['"Noto Sans JP"', 'Nunito', 'sans-serif'],
       },
       fontSize: {
-        'xs': ['0.75rem', { lineHeight: '1rem' }],
-        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-        'base': ['1rem', { lineHeight: '1.5rem' }],
-        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
-        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
-        '2xl': ['1.5rem', { lineHeight: '2rem' }],
-        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-        '5xl': ['3rem', { lineHeight: '1' }],
+        'xs': ['0.563rem', { lineHeight: '0.75rem' }],  // 9px
+        'sm': ['0.75rem', { lineHeight: '1rem' }],      // 12px
+        'base': ['0.875rem', { lineHeight: '1.25rem' }], // 14px
+        'lg': ['1rem', { lineHeight: '1.5rem' }],       // 16px
+        'h3': ['1.125rem', { lineHeight: '1.75rem' }],  // 18px
+        'h2': ['1.25rem', { lineHeight: '1.75rem' }],   // 20px
+        'h1': ['1.5rem', { lineHeight: '2rem' }],       // 24px
       },
       fontWeight: {
         thin: '100',
