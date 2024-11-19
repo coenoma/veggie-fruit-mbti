@@ -1,32 +1,22 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBTI性格診断テスト</title>
-    <meta name="description" content="あなたの性格を野菜や果物で表現するMBTI診断テスト">
-    <meta property="og:title" content="野菜・果物で診断するMBTI性格診断テスト">
-    <meta property="og:description" content="あなたの性格を野菜や果物で表現するMBTI診断テスト">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ request.url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
-</head>
-<body class="bg-background-light font-sans">
-    <div class="container-base">
-        <div class="quiz-container">
-            <div class="w-full bg-primary-100 rounded-full h-2 mb-8">
-                <div id="progress-bar" class="progress-bar" role="progressbar"></div>
-            </div>
-            <div id="question-container" class="animate-fade-up">
-                <!-- Questions will be loaded here by JavaScript -->
-            </div>
-        </div>
-    </div>
+{% extends "layouts/base.html" %}
 
-    <script>
-        const questions = {{ questions|tojson|safe }};
-    </script>
-    <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
-</body>
-</html>
+{% block title %}MBTI性格診断テスト{% endblock %}
+{% block description %}あなたの性格を野菜や果物で表現するMBTI診断テスト{% endblock %}
+
+{% block content %}
+<div class="quiz-container">
+    <div class="w-full bg-primary-100 rounded-full h-2 mb-8">
+        <div id="progress-bar" class="progress-bar" role="progressbar"></div>
+    </div>
+    <div id="question-container" class="animate-fade-up">
+        <!-- Questions will be loaded here by JavaScript -->
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const questions = {{ questions|tojson|safe }};
+</script>
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+{% endblock %}

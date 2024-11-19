@@ -44,14 +44,10 @@
 
     {% block scripts %}
     <script>
-        const personalityData = {
-            mbtiType: {{ mbti_type|tojson|safe }},
-            fruit: {{ personality.fruit|tojson|safe }},
-            description: {{ personality.description|tojson|safe }}
-        };
-
         function share(platform) {
-            const text = `私は${personalityData.fruit}タイプ (${personalityData.mbtiType}) でした！あなたは何の野菜・果物？`;
+            const mbtiType = "{{ mbti_type }}";
+            const fruit = "{{ personality.fruit }}";
+            const text = `私は${fruit}タイプ (${mbtiType}) でした！あなたは何の野菜・果物？`;
             const url = window.location.href;
             
             if (platform === 'twitter') {

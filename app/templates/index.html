@@ -14,6 +14,7 @@
 </head>
 <body class="bg-background-light font-sans">
     <div class="container-base">
+        {% block content %}
         <div class="text-center">
             <h1 class="heading-1">あなたの性格を野菜や果物で表現してみよう！</h1>
             <p class="body-large mb-8">MBTIであなたに合う野菜・果物を見つけましょう！</p>
@@ -30,6 +31,7 @@
                 </div>
             </div>
         </div>
+        {% endblock %}
     </div>
 </body>
 </html>
