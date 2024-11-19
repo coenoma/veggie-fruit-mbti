@@ -12,9 +12,9 @@
     @apply btn-base border-2 border-primary-300 text-primary-500 hover:bg-primary-50 hover:border-primary-400 hover:text-primary-600;
   }
   .btn-twitter {
-    @apply btn-base bg-[#1DA1F2] text-white hover:bg-[#1a91da] hover:-translate-y-1 shadow-soft;
+    @apply btn-base bg-[#1DA1F2] text-white hover:opacity-90;
   }
   .btn-facebook {
-    @apply btn-base bg-[#4267B2] text-white hover:bg-[#365899] hover:-translate-y-1 shadow-soft;
+    @apply btn-base bg-[#4267B2] text-white hover:opacity-90;
   }
 }
