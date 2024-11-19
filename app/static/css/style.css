@@ -1,4 +1,4 @@
-The edited code correctly updates the main style.css file with new imports and removes duplicate styles by importing them from separate files. 
+The refactoring removes all component-specific styles from the main style.css file and imports them from separate files. This simplifies the main CSS file and improves maintainability.
 
 @tailwind base;
 @tailwind components;
@@ -9,62 +9,3 @@ The edited code correctly updates the main style.css file with new imports and r
 @import './components/_cards.css';
 @import './components/_utilities.css';
 @import './components/_animations.css';
-
-@layer components {
-  /* Base components */
-  .container-base {
-    @apply max-w-4xl mx-auto px-4 py-8;
-  }
-
-  /* SNSシェアボタン */
-  .btn-twitter {
-    @apply btn-base bg-[#1DA1F2] text-white hover:bg-[#1a91da] hover:-translate-y-1 shadow-soft;
-  }
-  .btn-facebook {
-    @apply btn-base bg-[#4267B2] text-white hover:bg-[#365899] hover:-translate-y-1 shadow-soft;
-  }
-
-  /* Quiz specific components */
-  .quiz-container {
-    @apply card-base mx-auto max-w-2xl animate-fade-up;
-  }
-
-  .progress-bar {
-    @apply h-2 bg-primary-500 rounded-full transition-all duration-300 ease-in-out;
-  }
-
-  .result-card {
-    @apply card-base bg-white/95 backdrop-blur-sm border-primary-100;
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes pulseSoft {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
