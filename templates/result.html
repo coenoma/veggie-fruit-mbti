@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-background-light font-sans">
     <div class="container-base">
         <div class="result-card" style="background-color: {{ personality.color }}20">
             <h1 class="heading-2">あなたのタイプは {{ mbti_type }} です！</h1>
@@ -34,9 +34,9 @@
 
     <script>
         function share(platform) {
-            const personalityData = {{ personality|tojson|safe }};
             const mbtiType = "{{ mbti_type }}";
-            const text = `私は${personalityData.fruit}タイプ (${mbtiType}) でした！あなたは何の野菜・果物？`;
+            const fruit = "{{ personality.fruit }}";
+            const text = `私は${fruit}タイプ (${mbtiType}) でした！あなたは何の野菜・果物？`;
             const url = window.location.href;
             
             if (platform === 'twitter') {

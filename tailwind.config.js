@@ -22,19 +22,26 @@ module.exports = {
           800: '#9a3412',
           900: '#7c2d12',
         },
-        secondary: {
-          500: '#16a34a',
-          600: '#15803d',
+        pastel: {
+          pink: '#ffd1dc',
+          yellow: '#fff4bd',
+          green: '#d0f0c0',
+          blue: '#bde0fe',
+        },
+        background: {
+          light: '#fff9f5',
+          soft: '#fff0e6',
         }
       },
       borderRadius: {
-        'xl': '1rem',
-        '2xl': '1.5rem',
-        '3xl': '2rem',
+        'xl': '1.5rem',
+        '2xl': '2rem',
+        '3xl': '3rem',
+        'full': '9999px',
       },
       boxShadow: {
-        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        'soft': '0 4px 12px -2px rgba(249, 115, 22, 0.1), 0 2px 6px -1px rgba(249, 115, 22, 0.06)',
+        'hover': '0 10px 15px -3px rgba(249, 115, 22, 0.1), 0 4px 6px -2px rgba(249, 115, 22, 0.05)',
       },
       animation: {
         'fade-up': 'fadeUp 0.5s ease-out',
