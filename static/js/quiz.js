@@ -7,7 +7,7 @@ function showQuestion(index) {
     const question = questions[index];
 
     questionContainer.innerHTML = `
-        <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-6">${question.question}</h3>
+        <h3 class="heading-2 mb-6">${question.question}</h3>
         <div class="space-y-4">
             <button onclick="submitAnswer('A')" class="w-full btn-outline">
                 ${question.options.A}

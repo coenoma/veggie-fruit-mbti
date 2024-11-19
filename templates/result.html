@@ -8,20 +8,20 @@
     <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gray-50 font-sans">
-    <div class="container mx-auto px-4 py-12">
+    <div class="container-base">
         <div class="result-card" style="background-color: {{ personality.color }}20">
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">あなたのタイプは {{ mbti_type }} です！</h1>
-            <h2 class="text-2xl font-semibold text-gray-700 mb-6">あなたの野菜・果物: {{ personality.fruit }}</h2>
-            <div class="fruit-image mx-auto mb-8">
+            <h1 class="heading-2">あなたのタイプは {{ mbti_type }} です！</h1>
+            <h2 class="heading-2 text-primary-600">あなたの野菜・果物: {{ personality.fruit }}</h2>
+            <div class="fruit-image mx-auto mb-8 animate-pulse-soft">
                 <!-- フリーイラストが入ります -->
             </div>
-            <p class="text-lg text-gray-700 mb-8">{{ personality.description }}</p>
+            <p class="body-regular mb-8">{{ personality.description }}</p>
             
             <div class="flex flex-wrap justify-center gap-4 mb-8">
                 <button onclick="share('twitter')" class="btn-primary flex items-center">
                     <span>Twitterでシェア</span>
                 </button>
-                <button onclick="share('facebook')" class="btn-primary flex items-center">
+                <button onclick="share('facebook')" class="btn-secondary flex items-center">
                     <span>Facebookでシェア</span>
                 </button>
             </div>

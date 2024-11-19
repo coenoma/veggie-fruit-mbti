@@ -1,32 +1,67 @@
-/**
- * This code updates the primary color scheme in tailwind.config.js, modifies the button styles and animations in style.css, and fixes the "personality is not defined" error in the result page. 
- */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  .btn-primary {
-    @apply bg-primary-500 text-white font-bold py-3 px-6 hover:bg-primary-600 transform transition-all duration-300 ease-in-out;
-    clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
-  }
-  
-  .btn-outline {
-    @apply border-2 border-primary-500 text-primary-500 font-bold py-3 px-6 hover:bg-primary-500 hover:text-white transform transition-all duration-300 ease-in-out;
-    clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  /* Base components */
+  .container-base {
+    @apply max-w-4xl mx-auto px-4 py-8;
   }
 
+  /* Typography system */
+  .heading-1 {
+    @apply text-4xl md:text-5xl font-bold text-gray-800 mb-4;
+  }
+  .heading-2 {
+    @apply text-3xl md:text-4xl font-semibold text-gray-800 mb-3;
+  }
+  .body-large {
+    @apply text-xl text-gray-600;
+  }
+  .body-regular {
+    @apply text-lg text-gray-700;
+  }
+
+  /* Card variants */
+  .card-base {
+    @apply bg-white rounded-2xl shadow-lg p-8;
+  }
+  .card-primary {
+    @apply card-base border-l-4 border-primary-500;
+  }
+  .card-result {
+    @apply card-base bg-opacity-95 backdrop-blur-sm;
+  }
+
+  /* Button system */
+  .btn-base {
+    @apply font-bold py-3 px-6 transform transition-all duration-300 ease-in-out;
+    clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  }
+  .btn-primary {
+    @apply btn-base bg-primary-500 text-white hover:bg-primary-600 hover:-translate-y-1;
+  }
+  .btn-secondary {
+    @apply btn-base bg-gray-500 text-white hover:bg-gray-600 hover:-translate-y-1;
+  }
+  .btn-outline {
+    @apply btn-base border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white;
+  }
+
+  /* Animation library */
   .animate-fade-up {
     @apply animate-[fadeUp_0.5s_ease-out];
   }
-  
   .animate-slide-in {
     @apply animate-[slideIn_0.3s_ease-out];
   }
+  .animate-pulse-soft {
+    @apply animate-[pulseSoft_2s_ease-in-out_infinite];
+  }
 
+  /* Quiz specific components */
   .quiz-container {
-    @apply bg-white rounded-2xl p-8 shadow-lg mx-auto max-w-2xl animate-fade-up;
+    @apply card-base mx-auto max-w-2xl animate-fade-up;
   }
 
   .progress-bar {
@@ -34,46 +69,37 @@
   }
 
   .result-card {
-    @apply bg-white rounded-2xl p-8 shadow-lg mx-auto max-w-2xl animate-slide-in;
+    @apply card-result mx-auto max-w-2xl animate-slide-in;
   }
 }
 
-body {
-    font-family: 'Nunito', sans-serif;
-    background-color: #f8f9fa;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.container {
-    max-width: 800px;
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.quiz-container {
-    /* Original styles removed as they are replaced by Tailwind */
-}
-
-.progress {
-    height: 8px;
-    margin-bottom: 2rem;
-}
-
-.result-card {
-    /* Original styles removed as they are replaced by Tailwind */
-}
-
-.fruit-image {
-    width: 200px;
-    height: 200px;
-    margin: 2rem auto;
-}
-
-.share-buttons {
-    margin-top: 2rem;
-}
-
-.btn-outline-primary {
-    transition: all 0.3s ease;
-}
-
-.btn-outline-primary:hover {
-    transform: translateY(-2px);
+@keyframes pulseSoft {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
