@@ -24,10 +24,10 @@
 
   /* Card variants */
   .card-base {
-    @apply bg-background-light rounded-3xl shadow-soft p-8 border border-primary-100;
+    @apply bg-white rounded-3xl shadow-soft p-8 border border-primary-100;
   }
   .card-primary {
-    @apply card-base bg-gradient-to-br from-background-light to-background-soft;
+    @apply card-base bg-white;
   }
   .card-result {
     @apply card-base bg-opacity-95 backdrop-blur-sm;
@@ -38,13 +38,21 @@
     @apply font-bold py-3 px-8 rounded-full transform transition-all duration-300 ease-in-out;
   }
   .btn-primary {
-    @apply btn-base bg-gradient-to-r from-primary-400 to-primary-500 text-white hover:from-primary-500 hover:to-primary-600 hover:-translate-y-1 shadow-soft;
+    @apply btn-base bg-primary-500 text-white hover:bg-primary-600 hover:-translate-y-1 shadow-soft;
   }
   .btn-secondary {
-    @apply btn-base bg-gradient-to-r from-pastel-blue to-pastel-green text-primary-700 hover:from-pastel-green hover:to-pastel-blue hover:-translate-y-1 shadow-soft;
+    @apply btn-base bg-gray-100 text-gray-700 hover:bg-gray-200 hover:-translate-y-1 shadow-soft;
   }
   .btn-outline {
     @apply btn-base border-2 border-primary-300 text-primary-500 hover:bg-primary-50 hover:border-primary-400 hover:text-primary-600;
+  }
+
+  /* SNSシェアボタン */
+  .btn-twitter {
+    @apply btn-base bg-[#1DA1F2] text-white hover:bg-[#1a91da] hover:-translate-y-1 shadow-soft;
+  }
+  .btn-facebook {
+    @apply btn-base bg-[#4267B2] text-white hover:bg-[#365899] hover:-translate-y-1 shadow-soft;
   }
 
   /* Animation library */
