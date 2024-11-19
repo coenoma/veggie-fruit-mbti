@@ -15,17 +15,12 @@
             <div class="fruit-image mx-auto mb-8 animate-pulse-soft">
                 <!-- フリーイラストが入ります -->
             </div>
-            <p class="body-regular mb-8 whitespace-pre-wrap">{{ personality.description }}</p>
+            <p class="body-regular mb-8">{{ personality.description }}</p>
             
             <!-- 相性診断セクション -->
             {% if personality.compatible_types %}
             <div class="mb-8 p-6 bg-primary-50 rounded-2xl">
                 <h3 class="heading-2 text-primary-600 mb-4">相性の良い野菜・果物</h3>
-                {% if personality.compatibility_reason %}
-                <p class="text-primary-700 mb-4 text-lg">
-                    {{ personality.compatibility_reason }}
-                </p>
-                {% endif %}
                 <div class="grid gap-4">
                     {% for compatible_type in personality.compatible_types %}
                     <div class="bg-white p-4 rounded-xl shadow-soft">
@@ -34,6 +29,9 @@
                     </div>
                     {% endfor %}
                 </div>
+                {% if personality.compatibility_reason %}
+                <p class="mt-4 text-primary-700">{{ personality.compatibility_reason }}</p>
+                {% endif %}
             </div>
             {% endif %}
             
