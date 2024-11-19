@@ -1,3 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-primary-700 transition-all duration-300 ease-in-out transform hover:-translate-y-1;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 font-semibold py-2 px-4 rounded-lg hover:bg-primary-600 hover:text-white transition-all duration-300 ease-in-out transform hover:-translate-y-1;
+  }
+
+  .quiz-container {
+    @apply bg-white rounded-2xl p-8 shadow-lg mx-auto max-w-2xl animate-fade-in;
+  }
+
+  .progress-bar {
+    @apply h-2 bg-primary-500 rounded-full transition-all duration-300 ease-in-out;
+  }
+
+  .result-card {
+    @apply bg-white rounded-2xl p-8 shadow-lg mx-auto max-w-2xl animate-slide-up;
+  }
+}
+
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #f8f9fa;
@@ -8,11 +34,7 @@ body {
 }
 
 .quiz-container {
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    margin-top: 2rem;
+    /* Original styles removed as they are replaced by Tailwind */
 }
 
 .progress {
@@ -21,10 +43,7 @@ body {
 }
 
 .result-card {
-    text-align: center;
-    padding: 2rem;
-    border-radius: 15px;
-    margin-top: 2rem;
+    /* Original styles removed as they are replaced by Tailwind */
 }
 
 .fruit-image {

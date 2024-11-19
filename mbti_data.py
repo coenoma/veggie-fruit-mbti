@@ -1,36 +1,35 @@
 personality_types = {
     'ENTJ': {
-        'fruit': 'パイナップル (Pineapple)',
-        'description': 'Like a pineapple, you have a strong exterior but sweet interior. Natural leader with strategic thinking.',
+        'fruit': 'パイナップル',
+        'description': 'パイナップルのように、外側は強そうに見えても中は甘くて優しい性格。生まれながらのリーダーで、戦略的な思考の持ち主です。',
         'color': '#FFD700'
     },
     'INFP': {
-        'fruit': 'ブルーベリー (Blueberry)',
-        'description': 'Small but deep in flavor, you are idealistic and deeply emotional like a precious blueberry.',
+        'fruit': 'ブルーベリー',
+        'description': '小さくても深い味わいを持つブルーベリーのように、理想主義的で感受性豊かな性格です。',
         'color': '#4169E1'
     },
     'ESTP': {
-        'fruit': '唐辛子 (Chili)',
-        'description': 'Energetic and bold like a chili pepper, you bring excitement and spontaneity to life.',
+        'fruit': '唐辛子',
+        'description': '唐辛子のようにエネルギッシュで大胆な性格。人生に刺激とワクワクをもたらします。',
         'color': '#FF4500'
     },
     'ISTJ': {
-        'fruit': '大根 (Daikon)',
-        'description': 'Reliable and practical like a daikon radish, you are the foundation of many great things.',
+        'fruit': '大根',
+        'description': '大根のように頼りがいがあり実用的な性格。多くの素晴らしいものの基礎となる存在です。',
         'color': '#F5F5F5'
     },
-    # Add other types similarly
+    # その他のタイプも同様に追加
 }
 
 questions = [
     {
         'id': 1,
-        'question': 'How do you prefer to spend your free time?',
+        'question': '休日はどのように過ごすのが好きですか？',
         'options': {
-            'A': 'Going out with friends',
-            'B': 'Quiet time alone'
+            'A': '友達と外出して過ごす',
+            'B': '一人でゆっくり過ごす'
         }
     },
-    # Add more questions to cover all aspects of MBTI
-    # Keep adding questions following the pattern...
+    # 他の質問も追加...
 ]

@@ -7,12 +7,12 @@ function showQuestion(index) {
     const question = questions[index];
 
     questionContainer.innerHTML = `
-        <h3 class="mb-4">${question.question}</h3>
-        <div class="options">
-            <button onclick="submitAnswer('A')" class="btn btn-outline-primary mb-2 w-100">
+        <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-6">${question.question}</h3>
+        <div class="space-y-4">
+            <button onclick="submitAnswer('A')" class="w-full btn-outline">
                 ${question.options.A}
             </button>
-            <button onclick="submitAnswer('B')" class="btn btn-outline-primary w-100">
+            <button onclick="submitAnswer('B')" class="w-full btn-outline">
                 ${question.options.B}
             </button>
         </div>
@@ -22,6 +22,12 @@ function showQuestion(index) {
 }
 
 function submitAnswer(answer) {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.disabled = true;
+        button.classList.add('opacity-50');
+    });
+
     fetch('/submit_answer', {
         method: 'POST',
         headers: {
@@ -33,7 +39,9 @@ function submitAnswer(answer) {
     .then(data => {
         currentQuestion++;
         if (currentQuestion < totalQuestions) {
-            showQuestion(currentQuestion);
+            setTimeout(() => {
+                showQuestion(currentQuestion);
+            }, 300);
         } else {
             window.location.href = '/result';
         }

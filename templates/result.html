@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your MBTI Result</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>診断結果 - MBTI性格診断テスト</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
-<body>
-    <div class="container py-5">
-        <div class="result-card" style="background-color: {{ personality.color }}">
-            <h1 class="display-4 mb-4">You are {{ mbti_type }}!</h1>
-            <h2 class="h3 mb-4">Your fruit personality: {{ personality.fruit }}</h2>
-            <div class="fruit-image">
-                <!-- SVG illustration will be embedded here -->
+<body class="bg-gray-50 font-sans">
+    <div class="container mx-auto px-4 py-12">
+        <div class="result-card" style="background-color: {{ personality.color }}20">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">あなたのタイプは {{ mbti_type }} です！</h1>
+            <h2 class="text-2xl font-semibold text-gray-700 mb-6">あなたの野菜・果物: {{ personality.fruit }}</h2>
+            <div class="fruit-image mx-auto mb-8">
+                <!-- フリーイラストが入ります -->
             </div>
-            <p class="lead mb-4">{{ personality.description }}</p>
+            <p class="text-lg text-gray-700 mb-8">{{ personality.description }}</p>
             
-            <div class="share-buttons">
-                <button class="btn btn-primary me-2" onclick="share('twitter')">
-                    Share on Twitter
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button onclick="share('twitter')" class="btn-primary flex items-center">
+                    <span>Twitterでシェア</span>
                 </button>
-                <button class="btn btn-primary" onclick="share('facebook')">
-                    Share on Facebook
+                <button onclick="share('facebook')" class="btn-primary flex items-center">
+                    <span>Facebookでシェア</span>
                 </button>
             </div>
             
-            <a href="{{ url_for('index') }}" class="btn btn-outline-primary mt-4">
-                Take the Test Again
+            <a href="{{ url_for('index') }}" class="btn-outline inline-block">
+                もう一度診断する
             </a>
         </div>
     </div>
 
     <script>
         function share(platform) {
-            const text = `I'm a ${personality.fruit} (${mbti_type}) personality type! Find out yours!`;
+            const text = `私は${personality.fruit}タイプ (${mbti_type}) でした！あなたは何の野菜・果物？`;
             const url = window.location.href;
             
             if (platform === 'twitter') {
