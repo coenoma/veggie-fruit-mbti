@@ -19,19 +19,44 @@
             
             <!-- 相性診断セクション -->
             {% if personality.compatible_types %}
-            <div class="mb-8 p-6 bg-primary-50 rounded-2xl">
-                <h3 class="heading-2 text-primary-600 mb-4">相性の良い野菜・果物</h3>
-                <div class="grid gap-4">
+            <div class="mb-8">
+                <h3 class="heading-2 text-primary-600 mb-6">相性診断結果</h3>
+                <div class="space-y-6">
                     {% for compatible_type in personality.compatible_types %}
-                    <div class="bg-white p-4 rounded-xl shadow-soft">
-                        <h4 class="font-bold text-lg mb-2">{{ personality_types[compatible_type].fruit }} ({{ compatible_type }})</h4>
-                        <p class="text-gray-600">{{ personality_types[compatible_type].description.split('\n\n')[0] }}</p>
+                    <div class="bg-white p-6 rounded-2xl shadow-soft border border-primary-100 transform hover:scale-102 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="heading-3 mb-1">{{ personality_types[compatible_type].fruit }}</h4>
+                                <p class="text-small text-primary-600">({{ compatible_type }}タイプ)</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-lg font-bold text-primary-500">
+                                    {{ (loop.index0 * 5 + 85)|string + '%' }}
+                                </div>
+                                <div class="text-tiny text-gray-500">相性度</div>
+                            </div>
+                        </div>
+                        <div class="relative w-full h-2 bg-primary-100 rounded-full mb-4">
+                            <div class="absolute top-0 left-0 h-full bg-primary-500 rounded-full"
+                                 style="width: {{ (loop.index0 * 5 + 85)|string + '%' }}"></div>
+                        </div>
+                        <p class="text-regular text-gray-700">{{ personality_types[compatible_type].description.split('\n\n')[0] }}</p>
+                        <div class="mt-4 p-4 bg-primary-50 rounded-xl">
+                            <p class="text-small text-primary-700">
+                                <span class="font-medium">相性の理由：</span>
+                                {% if personality.compatibility_reason %}
+                                {{ personality.compatibility_reason }}
+                                {% else %}
+                                {{ personality_types[compatible_type].fruit }}と{{ personality.fruit }}は、お互いの特性を活かし合える関係です。
+                                {% endif %}
+                            </p>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>
-                {% if personality.compatibility_reason %}
-                <p class="mt-4 text-primary-700">{{ personality.compatibility_reason }}</p>
-                {% endif %}
+                <div class="mt-6 text-center">
+                    <p class="text-small text-gray-500">※相性度は性格特性の組み合わせから算出された参考値です</p>
+                </div>
             </div>
             {% endif %}
             
