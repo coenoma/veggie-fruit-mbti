@@ -36,11 +36,10 @@
     </div>
 
     <script>
-        // Define the personality data from Jinja template
         const personalityData = {
-            mbtiType: "{{ mbti_type }}",
-            fruit: "{{ personality.fruit }}",
-            description: "{{ personality.description }}"
+            mbtiType: {{ mbti_type|tojson|safe }},
+            fruit: {{ personality.fruit|tojson|safe }},
+            description: {{ personality.description|tojson|safe }}
         };
 
         function share(platform) {
