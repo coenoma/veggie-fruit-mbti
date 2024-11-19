@@ -632,16 +632,18 @@ video {
 /* Button system */
 
 .btn-primary {
+  position: relative;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   font-weight: 700;
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  /* パディングを増やしてclip-pathの範囲を確保 */
+  clip-path: polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%);
   --tw-bg-opacity: 1;
   background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
@@ -656,16 +658,18 @@ video {
 }
 
 .btn-secondary {
+  position: relative;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   font-weight: 700;
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  /* パディングを増やしてclip-pathの範囲を確保 */
+  clip-path: polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%);
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
@@ -680,16 +684,18 @@ video {
 }
 
 .btn-outline {
+  position: relative;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   font-weight: 700;
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  /* パディングを増やしてclip-pathの範囲を確保 */
+  clip-path: polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%);
   border-width: 2px;
   --tw-border-opacity: 1;
   border-color: rgb(249 115 22 / var(--tw-border-opacity, 1));
@@ -702,6 +708,24 @@ video {
   background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.btn-outline {
+  /* アウトラインボタン特有の調整 */
+  &::before {
+    content: '';
+  }
+  &::before {
+    position: absolute;
+  }
+  &::before {
+    inset: 0px;
+  }
+  &::before {
+    clip-path: polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%);
+    margin: -2px;
+    /* ボーダーの太さに合わせて調整 */
+  }
 }
 
 /* Animation library */
