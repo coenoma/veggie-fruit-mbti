@@ -165,9 +165,7 @@ personality_types = {
 - 事務処理やデータ管理
 - 伝統を守り、安定した環境を築く
 - 実務的な仕事に貢献する''',
-        'color': '#F5F5F5',
-        'compatible_types': ['ENFP', 'ESFP', 'ENTP'],
-        'compatibility_reason': '実践的な視点と創造性の組み合わせにより、革新的なアイデアを実現できます。'
+        'color': '#F5F5F5'
     },
     'ESFJ': {
         'fruit': 'いちご',
@@ -182,9 +180,7 @@ personality_types = {
 - 接客業やサービス業
 - 教育や福祉分野
 - 人々とのコミュニケーションを円滑に進める''',
-        'color': '#FF69B4',
-        'compatible_types': ['INFP', 'ISFP', 'INTP'],
-        'compatibility_reason': '共感力と創造性の組み合わせにより、温かい人間関係を築くことができます。'
+        'color': '#FF69B4'
     },
     'ISFJ': {
         'fruit': 'バナナ',
@@ -199,9 +195,7 @@ personality_types = {
 - 医療や介護分野
 - 教育や保育分野
 - 人々を支える仕事''',
-        'color': '#FFD700',
-        'compatible_types': ['ENTP', 'ENFP', 'ESTJ'],
-        'compatibility_reason': '安定性と創造性の組み合わせにより、革新的なアイデアを実現できます。'
+        'color': '#FFD700'
     },
     'ESTP': {
         'fruit': '唐辛子',
@@ -216,9 +210,7 @@ personality_types = {
 - 営業やマーケティング
 - スポーツやエンターテイメント
 - 変化を楽しめる仕事''',
-        'color': '#FF4500',
-        'compatible_types': ['ISFJ', 'ISTJ', 'INFJ'],
-        'compatibility_reason': '行動力と安定性の組み合わせにより、効果的なプロジェクト推進が可能です。'
+        'color': '#FF4500'
     },
     'ISTP': {
         'fruit': 'ごぼう',
@@ -233,9 +225,7 @@ personality_types = {
 - 技術職やエンジニア
 - 修理やメンテナンス
 - 問題解決に役立つ仕事''',
-        'color': '#8B4513',
-        'compatible_types': ['ENFJ', 'ESFJ', 'ENTJ'],
-        'compatibility_reason': '実践力と共感力の組み合わせにより、効果的なチーム作りが可能です。'
+        'color': '#8B4513'
     },
     'ESFP': {
         'fruit': 'オレンジ',
@@ -244,15 +234,13 @@ personality_types = {
 特徴：
 - 表現力豊かで、人を楽しませる
 - 感覚的で、五感を大切にする
-- spontaneouで、行動的
+-  spontaneou  で、行動的
 
 活かし方：
 - エンターテイメントや芸術分野
 - 広報やイベント企画
 - 人々との交流を楽しむ仕事''',
-        'color': '#FFA500',
-        'compatible_types': ['ISTJ', 'ISFJ', 'INFJ'],
-        'compatibility_reason': '明るさと安定性の組み合わせにより、楽しい環境作りが可能です。'
+        'color': '#FFA500'
     },
     'ISFP': {
         'fruit': 'もも',
@@ -267,9 +255,7 @@ personality_types = {
 - 芸術やデザイン分野
 - ファッションや音楽
 - 自分らしい表現方法で世界と繋がる''',
-        'color': '#FFB6C1',
-        'compatible_types': ['ENFJ', 'ESFJ', 'ENTJ'],
-        'compatibility_reason': '感性と行動力の組み合わせにより、創造的なプロジェクトを成功に導くことができます。'
+        'color': '#FFB6C1'
     }
 }
 

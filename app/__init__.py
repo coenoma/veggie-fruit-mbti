@@ -9,16 +9,20 @@ class Base(DeclarativeBase):
 db = SQLAlchemy(model_class=Base)
 
 def create_app(config_object=None):
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='../static')
     
     # Default configuration
-    app.config.from_object('app.config.default.DefaultConfig')
+    app.secret_key = os.environ.get("FLASK_SECRET_KEY") or "a secret key"
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL", "sqlite:///mbti.db")
+    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+        "pool_recycle": 300,
+        "pool_pre_ping": True,
+    }
     
     # Override with specific configuration if provided
     if config_object:
         app.config.from_object(config_object)
     
-    # Initialize extensions
     db.init_app(app)
     
     # Register blueprints
