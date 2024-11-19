@@ -1,60 +1,92 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>診断結果 - MBTI性格診断テスト</title>
-    <meta name="description" content="あなたの性格を野菜や果物で表現するMBTI診断テスト">
-    <meta property="og:title" content="野菜・果物で診断するMBTI性格診断テスト">
-    <meta property="og:description" content="あなたの性格を野菜や果物で表現するMBTI診断テスト">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ request.url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
-</head>
-<body class="bg-background-light font-sans">
-    <div class="container-base">
-        {% block content %}
-        <div class="result-card bg-background-light">
-            <h1 class="heading-2">あなたのタイプは {{ mbti_type }} です！</h1>
-            <h2 class="heading-2 text-primary-600">あなたの野菜・果物: {{ personality.fruit }}</h2>
-            <div class="fruit-image mx-auto mb-8 animate-pulse-soft">
-                <img src="{{ url_for('static', filename='images/fruits.svg') }}" 
-                     alt="野菜と果物" 
-                     class="max-h-64 mx-auto"
-                     loading="lazy">
-            </div>
-            <p class="body-regular mb-8">{{ personality.description }}</p>
-            
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <button onclick="share('twitter')" class="btn-twitter flex items-center">
-                    <span>Twitterでシェア</span>
-                </button>
-                <button onclick="share('facebook')" class="btn-facebook flex items-center">
-                    <span>Facebookでシェア</span>
-                </button>
-            </div>
-            
-            <a href="{{ url_for('quiz.quiz') }}" class="btn-outline inline-block">
-                もう一度診断する
-            </a>
-        </div>
-        {% endblock %}
+{% extends "layouts/base.html" %}
+
+{% block title %}診断結果 - {{ mbti_type }}タイプ{% endblock %}
+{% block description %}あなたは{{ personality.fruit }}タイプ ({{ mbti_type }}) です！{% endblock %}
+
+{% block content %}
+<div class="result-card max-w-2xl mx-auto bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-soft">
+    <header class="text-center mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" aria-label="診断結果">
+            あなたのタイプは<span class="text-primary-600">{{ mbti_type }}</span>です！
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-semibold text-primary-600 mb-2">
+            あなたの野菜・果物: {{ personality.fruit }}
+        </h2>
+    </header>
+
+    <div class="fruit-image mx-auto mb-8 animate-pulse-soft" aria-hidden="true">
+        <img src="{{ url_for('static', filename='images/fruits/' + mbti_type.lower() + '.svg') }}" 
+             alt="{{ personality.fruit }}のイラスト" 
+             class="max-h-64 mx-auto"
+             loading="lazy">
     </div>
 
-    {% block scripts %}
-    <script>
-        function share(platform) {
-            const text = `私は{{ personality.fruit }}タイプ ({{ mbti_type }}) でした！あなたは何の野菜・果物？`;
-            const url = window.location.href;
-            
-            if (platform === 'twitter') {
-                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`);
-            } else if (platform === 'facebook') {
-                window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
-            }
+    <div class="prose prose-lg max-w-none mb-8">
+        <p class="text-gray-700 leading-relaxed">{{ personality.description | safe }}</p>
+    </div>
+    
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
+        <button onclick="share('twitter')" 
+                class="btn-twitter w-full sm:w-auto flex items-center justify-center gap-2 transition-base hover-lift focus-ring"
+                aria-label="Twitterでシェア">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+            <span>Twitterでシェア</span>
+        </button>
+        <button onclick="share('facebook')" 
+                class="btn-facebook w-full sm:w-auto flex items-center justify-center gap-2 transition-base hover-lift focus-ring"
+                aria-label="Facebookでシェア">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            <span>Facebookでシェア</span>
+        </button>
+    </div>
+    
+    <div class="text-center">
+        <a href="{{ url_for('quiz.quiz') }}" 
+           class="btn-outline inline-block transition-base hover-lift focus-ring"
+           aria-label="もう一度診断する">
+            もう一度診断する
+        </a>
+    </div>
+</div>
+
+<div id="share-toast" 
+     role="alert" 
+     aria-live="polite" 
+     class="fixed bottom-4 right-4 bg-primary-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-full opacity-0 transition-all duration-300">
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function share(platform) {
+        const text = `私は{{ personality.fruit }}タイプ ({{ mbti_type }}) でした！あなたは何の野菜・果物？`;
+        const url = window.location.href;
+        let shareUrl = '';
+        
+        if (platform === 'twitter') {
+            shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        } else if (platform === 'facebook') {
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
         }
-    </script>
-    {% endblock %}
-</body>
-</html>
+
+        const windowFeatures = 'width=550,height=450,resizable=yes,scrollbars=yes,status=yes';
+        window.open(shareUrl, `share_${platform}`, windowFeatures);
+        
+        showToast('シェアウィンドウを開きました');
+    }
+
+    function showToast(message) {
+        const toast = document.getElementById('share-toast');
+        toast.textContent = message;
+        toast.classList.remove('translate-y-full', 'opacity-0');
+        
+        setTimeout(() => {
+            toast.classList.add('translate-y-full', 'opacity-0');
+        }, 3000);
+    }
+</script>
+{% endblock %}

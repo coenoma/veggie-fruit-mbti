@@ -1,15 +1,44 @@
 @layer components {
+  /* Base transitions */
+  .transition-base {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Animation classes */
   .animate-fade-up {
-    @apply animate-[fadeUp_0.5s_ease-out];
+    @apply animate-[fadeUp_0.3s_ease-out];
   }
   .animate-slide-in {
     @apply animate-[slideIn_0.3s_ease-out];
   }
+  .animate-fade-in {
+    @apply animate-[fadeIn_0.3s_ease-out];
+  }
+  .animate-slide-up {
+    @apply animate-[slideUp_0.3s_ease-out];
+  }
   .animate-pulse-soft {
     @apply animate-[pulseSoft_2s_ease-in-out_infinite];
   }
+
+  /* Hover effects */
+  .hover-scale {
+    @apply transition-base hover:scale-105;
+  }
+  .hover-lift {
+    @apply transition-base hover:-translate-y-1;
+  }
+  .hover-glow {
+    @apply transition-base hover:shadow-hover;
+  }
+
+  /* Focus styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
 }
 
+/* Animation keyframes */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -29,6 +58,26 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

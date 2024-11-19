@@ -10,13 +10,18 @@
     <meta property="og:description" content="あなたの性格を野菜や果物で表現するMBTI診断テスト">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request.url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
     {% endblock %}
 </head>
-<body class="bg-background-light font-sans">
+<body class="bg-background-light font-sans antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-white focus:z-50">
+        メインコンテンツにスキップ
+    </a>
     <div class="container-responsive py-8">
-        {% block content %}{% endblock %}
+        <main id="main-content" class="focus:outline-none" tabindex="-1">
+            {% block content %}{% endblock %}
+        </main>
     </div>
     {% block scripts %}{% endblock %}
 </body>
