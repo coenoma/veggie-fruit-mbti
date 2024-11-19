@@ -44,7 +44,7 @@ function submitAnswer(answer) {
         button.classList.add('opacity-50', 'cursor-not-allowed');
     });
 
-    fetch('/quiz/submit_answer', {
+    fetch(submitUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ function submitAnswer(answer) {
                 showQuestion(currentQuestion);
             }, 300);
         } else {
-            window.location.href = '/result';
+            window.location.href = resultUrl;
         }
     })
     .catch(error => {

@@ -21,6 +21,8 @@
 
     <script>
         const questions = {{ questions|tojson|safe }};
+        const submitUrl = "{{ url_for('quiz.submit_answer') }}";
+        const resultUrl = "{{ url_for('result.result') }}";
     </script>
     <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
 </body>
