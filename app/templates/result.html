@@ -45,9 +45,7 @@
     {% block scripts %}
     <script>
         function share(platform) {
-            const mbtiType = "{{ mbti_type }}";
-            const fruit = "{{ personality.fruit }}";
-            const text = `私は${fruit}タイプ (${mbtiType}) でした！あなたは何の野菜・果物？`;
+            const text = `私は{{ personality.fruit }}タイプ ({{ mbti_type }}) でした！あなたは何の野菜・果物？`;
             const url = window.location.href;
             
             if (platform === 'twitter') {
