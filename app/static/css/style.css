@@ -1,13 +1,13 @@
-/* Main stylesheet - Source file */
+/* style.css */
 
-/* 1. Tailwind directives */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* 2. Component imports */
+/* 1. @importを最初に配置 */
 @import './components/_typography.css';
 @import './components/_buttons.css';
 @import './components/_cards.css';
 @import './components/_utilities.css';
 @import './components/_animations.css';
+
+/* 2. TailwindCSSのディレクティブを続ける */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
