@@ -1,93 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>診断結果 - MBTI性格診断テスト</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
-</head>
-<body class="bg-background-light font-sans">
-    <div class="container-base">
-        <div class="result-card bg-background-light">
-            <h1 class="heading-2">あなたのタイプは {{ mbti_type }} です！</h1>
-            <h2 class="heading-2 text-primary-600">あなたの野菜・果物: {{ personality.fruit }}</h2>
-            <div class="fruit-image mx-auto mb-8 animate-pulse-soft">
-                <!-- フリーイラストが入ります -->
-            </div>
-            <p class="body-regular mb-8">{{ personality.description }}</p>
-            
-            <!-- 相性診断セクション -->
-            {% if personality.compatible_types %}
-            <div class="mb-8">
-                <h3 class="heading-2 text-primary-600 mb-6">相性診断結果</h3>
-                <div class="space-y-6">
-                    {% for compatible_type in personality.compatible_types %}
-                    <div class="bg-white p-6 rounded-2xl shadow-soft border border-primary-100 transform hover:scale-102 transition-all">
-                        <div class="flex items-start justify-between mb-4">
-                            <div>
-                                <h4 class="heading-3 mb-1">{{ personality_types[compatible_type].fruit }}</h4>
-                                <p class="text-small text-primary-600">({{ compatible_type }}タイプ)</p>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-lg font-bold text-primary-500">
-                                    {{ (loop.index0 * 5 + 85)|string + '%' }}
-                                </div>
-                                <div class="text-tiny text-gray-500">相性度</div>
-                            </div>
-                        </div>
-                        <div class="relative w-full h-2 bg-primary-100 rounded-full mb-4">
-                            <div class="absolute top-0 left-0 h-full bg-primary-500 rounded-full"
-                                 style="width: {{ (loop.index0 * 5 + 85)|string + '%' }}"></div>
-                        </div>
-                        <p class="text-regular text-gray-700">{{ personality_types[compatible_type].description.split('\n\n')[0] }}</p>
-                        <div class="mt-4 p-4 bg-primary-50 rounded-xl">
-                            <p class="text-small text-primary-700">
-                                <span class="font-medium">相性の理由：</span>
-                                {% if personality.compatibility_reason %}
-                                {{ personality.compatibility_reason }}
-                                {% else %}
-                                {{ personality_types[compatible_type].fruit }}と{{ personality.fruit }}は、お互いの特性を活かし合える関係です。
-                                {% endif %}
-                            </p>
-                        </div>
-                    </div>
-                    {% endfor %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>診断結果 - MBTI性格診断テスト</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="{{ url_for('static', filename='css/style.css') }}"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="bg-background-light font-sans">
+        <div class="container-base">
+            <div class="result-card bg-background-light">
+                <h1 class="heading-2">
+                    あなたのタイプは {{ mbti_type }} です！
+                </h1>
+                <h2 class="heading-2 text-primary-600">
+                    あなたの野菜・果物: {{ personality.fruit }}
+                </h2>
+                <div class="fruit-image mx-auto mb-8 animate-pulse-soft">
+                    <!-- フリーイラストが入ります -->
                 </div>
-                <div class="mt-6 text-center">
-                    <p class="text-small text-gray-500">※相性度は性格特性の組み合わせから算出された参考値です</p>
-                </div>
-            </div>
-            {% endif %}
-            
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <button onclick="share('twitter')" class="btn-twitter flex items-center">
-                    <span>Twitterでシェア</span>
-                </button>
-                <button onclick="share('facebook')" class="btn-facebook flex items-center">
-                    <span>Facebookでシェア</span>
-                </button>
-            </div>
-            
-            <a href="{{ url_for('main.index') }}" class="btn-outline inline-block">
-                もう一度診断する
-            </a>
-        </div>
-    </div>
+                <p class="body-regular mb-8">{{ personality.description }}</p>
 
-    <script>
-        function share(platform) {
-            const mbtiType = "{{ mbti_type }}";
-            const fruit = "{{ personality.fruit }}";
-            const text = `私は${fruit}タイプ (${mbtiType}) でした！あなたは何の野菜・果物？`;
-            const url = window.location.href;
-            
-            if (platform === 'twitter') {
-                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`);
-            } else if (platform === 'facebook') {
-                window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+                <!-- 相性診断セクション -->
+                {% if personality.compatible_types %}
+                <div class="mb-8">
+                    <h3 class="heading-2 text-primary-600 mb-6">
+                        相性診断結果
+                    </h3>
+                    <div class="space-y-6">
+                        {% for compatible_type in personality.compatible_types
+                        %}
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-soft border border-primary-100 transform hover:scale-102 transition-all"
+                        >
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h4 class="heading-3 mb-1">
+                                        {{
+                                        personality_types[compatible_type].fruit
+                                        }}
+                                    </h4>
+                                    <p class="text-small text-primary-600">
+                                        ({{ compatible_type }}タイプ)
+                                    </p>
+                                </div>
+                                <div class="text-right">
+                                    <div
+                                        class="text-lg font-bold text-primary-500"
+                                    >
+                                        {{ (loop.index0 * 5 + 85)|string + '%'
+                                        }}
+                                    </div>
+                                    <div class="text-tiny text-gray-500">
+                                        相性度
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="relative w-full h-2 bg-primary-100 rounded-full mb-4"
+                            >
+                                <div
+                                    class="absolute top-0 left-0 h-full bg-primary-500 rounded-full"
+                                    style="width: {{ (loop.index0 * 5 + 85)|string + '%' }}"
+                                ></div>
+                            </div>
+                            <p class="text-regular text-gray-700">
+                                {{
+                                personality_types[compatible_type].description.split('\n\n')[0]
+                                }}
+                            </p>
+                            <div class="mt-4 p-4 bg-primary-50 rounded-xl">
+                                <p class="text-small text-primary-700">
+                                    <span class="font-medium"
+                                        >相性の理由：</span
+                                    >
+                                    {% if personality.compatibility_reason %} {{
+                                    personality.compatibility_reason }} {% else
+                                    %} {{
+                                    personality_types[compatible_type].fruit
+                                    }}と{{ personality.fruit
+                                    }}は、お互いの特性を活かし合える関係です。
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="mt-6 text-center">
+                        <p class="text-small text-gray-500">
+                            ※相性度は性格特性の組み合わせから算出された参考値です
+                        </p>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button
+                        onclick="share('twitter')"
+                        class="btn-twitter flex items-center"
+                    >
+                        <span>Twitterでシェア</span>
+                    </button>
+                    <button
+                        onclick="share('facebook')"
+                        class="btn-facebook flex items-center"
+                    >
+                        <span>Facebookでシェア</span>
+                    </button>
+                </div>
+
+                <a
+                    href="{{ url_for('main.index') }}"
+                    class="btn-outline inline-block"
+                >
+                    もう一度診断する
+                </a>
+            </div>
+        </div>
+
+        <script>
+            function share(platform) {
+                const mbtiType = "{{ mbti_type }}";
+                const fruit = "{{ personality.fruit }}";
+                const text = `私は${fruit}タイプ (${mbtiType}) でした！あなたは何の野菜・果物？`;
+                const url = window.location.href;
+
+                if (platform === "twitter") {
+                    window.open(
+                        `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
+                    );
+                } else if (platform === "facebook") {
+                    window.open(
+                        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+                    );
+                }
             }
-        }
-    </script>
-</body>
+        </script>
+    </body>
 </html>

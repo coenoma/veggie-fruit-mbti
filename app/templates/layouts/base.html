@@ -1,25 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    {% block head %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %} - MBTI性格診断テスト</title>
-    <meta name="description" content="{% block description %}{% endblock %}">
-    <meta property="og:title" content="野菜・果物で診断するMBTI性格診断テスト">
-    <meta property="og:description" content="あなたの性格を野菜や果物で表現するMBTI診断テスト">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ request.url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
-    {% endblock %}
-</head>
-<body class="bg-background-light font-sans antialiased">
-    <div class="container-responsive py-8">
-        <main class="focus:outline-none">
-            {% block content %}{% endblock %}
-        </main>
-    </div>
-    {% block scripts %}{% endblock %}
-</body>
+    <head>
+        {% block head %}
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}{% endblock %} - MBTI性格診断テスト</title>
+        <meta
+            name="description"
+            content="{% block description %}{% endblock %}"
+        />
+        <meta
+            property="og:title"
+            content="野菜・果物で診断するMBTI性格診断テスト"
+        />
+        <meta
+            property="og:description"
+            content="あなたの性格を野菜や果物で表現するMBTI診断テスト"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ request.url }}" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="{{ url_for('static', filename='css/style.css') }}"
+            rel="stylesheet"
+        />
+        {% endblock %}
+    </head>
+    <body class="bg-background-light font-sans antialiased">
+        <div class="container-responsive py-8">
+            <main class="focus:outline-none">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+        {% block scripts %}{% endblock %}
+    </body>
 </html>
