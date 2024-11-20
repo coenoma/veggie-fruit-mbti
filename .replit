@@ -46,7 +46,7 @@ task = "packager.installForAll"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm run build-css"
+args = "npx tailwindcss -i ./app/static/css/style.css -o ./app/static/dist/css/output.css --watch"
 
 [deployment]
 run = ["sh", "-c", "python main.py"]
