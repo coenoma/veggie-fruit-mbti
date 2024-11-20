@@ -43,6 +43,11 @@ python main.py
 npm run build-css
 ```
 
+3. TailwindCSSの監視モード
+```bash
+npm run watch-css
+```
+
 ## プロジェクト構造
 ```
 app/
