@@ -1,0 +1,190 @@
+# =============================
+# Python関連の無視設定
+# =============================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Flaskのインスタンスフォルダとデータベース
+instance/
+*.db
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Flask specific
+.webassets-cache
+
+# Sphinx documentation
+docs/_build/
+doc/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# dotenv
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# =============================
+# Node.js関連の無視設定
+# =============================
+
+# Node modules
+node_modules/
+
+# Output CSS (生成されたファイル)
+app/static/css/output.css
+
+# Next.js (もし使用している場合)
+.next/
+
+# Replitの設定ファイル
+.replit
+
+# Supabase関連
+supabase/
+
+# Platform-specific build directories (モバイル関連など)
+ios/
+macos/
+windows/
+linux/
+android/
+.dart_tool/
+
+# =============================
+# OS固有の無視設定
+# =============================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# =============================
+# IDE関連の無視設定
+# =============================
+
+# VSCode
+.vscode/
+
+# JetBrains IDEs (例: PyCharm)
+.idea/
+
+# =============================
+# その他の無視設定
+# =============================
+
+# Logs
+*.log
+
+# Temporary files
+Pasted-*.txt
+*.tmp
+*.temp
+
+# Swap files
+*.swp
+*.swo
+
+# Backup files
+*.bak
+*.orig
+*.backup
