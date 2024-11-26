@@ -5,14 +5,17 @@ function showQuestion(index) {
     const questionContainer = document.getElementById('question-container');
     const progressBar = document.getElementById('progress-bar');
     const question = questions[index];
-
+    
+    // 進捗率を計算（質問数は動的）
+    const progressPercentage = ((index + 1) / questions.length) * 100;
+    
     // アニメーション用のクラスを追加
     questionContainer.classList.add('opacity-0', 'translate-y-4');
     
     questionContainer.innerHTML = `
         <div class="mb-8">
             <h3 class="heading-2 mb-4">${question.question}</h3>
-            <p class="text-gray-600 text-sm">質問 ${index + 1} / ${totalQuestions}</p>
+            <p class="text-gray-600 text-sm">質問 ${index + 1} / ${questions.length}</p>
         </div>
         <div class="space-y-4 md:space-y-6">
             <button onclick="submitAnswer('A')" 
@@ -32,9 +35,9 @@ function showQuestion(index) {
         questionContainer.classList.add('transition-all', 'duration-500', 'ease-out');
     });
 
-    // プログレスバーのアニメーション
+    // プログレスバーの更新（アニメーション付き）
     progressBar.style.transition = 'width 0.5s ease-out';
-    progressBar.style.width = `${((index + 1) / totalQuestions) * 100}%`;
+    progressBar.style.width = `${progressPercentage}%`;
 }
 
 function submitAnswer(answer) {

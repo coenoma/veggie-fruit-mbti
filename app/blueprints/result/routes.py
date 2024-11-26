@@ -31,12 +31,20 @@ def result():
             'JP': sum(1 for ans in type_answers['JP'] if ans == 'A')
         }
         
-        # Calculate MBTI type based on proportions
+        # 各タイプの質問数に基づいて判定基準を設定
+        thresholds = {
+            'EI': len(type_answers['EI']) / 2,
+            'SN': len(type_answers['SN']) / 2,
+            'TF': len(type_answers['TF']) / 2,
+            'JP': len(type_answers['JP']) / 2
+        }
+        
+        # スコアと閾値を比較してMBTIタイプを決定
         mbti_type = ''
-        mbti_type += 'E' if scores['EI'] >= len(type_answers['EI']) / 2 else 'I'
-        mbti_type += 'S' if scores['SN'] >= len(type_answers['SN']) / 2 else 'N'
-        mbti_type += 'T' if scores['TF'] >= len(type_answers['TF']) / 2 else 'F'
-        mbti_type += 'J' if scores['JP'] >= len(type_answers['JP']) / 2 else 'P'
+        mbti_type += 'E' if scores['EI'] >= thresholds['EI'] else 'I'
+        mbti_type += 'S' if scores['SN'] >= thresholds['SN'] else 'N'
+        mbti_type += 'T' if scores['TF'] >= thresholds['TF'] else 'F'
+        mbti_type += 'J' if scores['JP'] >= thresholds['JP'] else 'P'
 
         personality = personality_types.get(mbti_type, {
             'fruit': '不明',
