@@ -13,7 +13,8 @@
     @apply container-base
            max-w-3xl
            gap-8 sm:gap-12
-           animate-fadeIn;
+           animate-fadeIn
+           px-4 sm:px-6;
   }
 
   /* 結果ページコンテナ */
@@ -21,7 +22,8 @@
     @apply container-base
            max-w-3xl
            gap-6 sm:gap-8
-           animate-slideUp;
+           animate-slideUp
+           px-4 sm:px-6;
   }
 
   /* コンテンツセクション */
