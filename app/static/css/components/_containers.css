@@ -14,6 +14,16 @@
            max-w-3xl
            gap-8 sm:gap-12
            px-4 sm:px-6;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+  }
+
+  @media screen and (max-width: 640px) {
+    .quiz-container {
+      max-width: 100%;
+      padding: 0 16px;
+    }
   }
 
   /* 結果ページコンテナ */
