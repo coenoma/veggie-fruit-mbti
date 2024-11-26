@@ -1,5 +1,25 @@
 @layer components {
-  /* ベースコンテナ - すべてのページで使用する基本的なコンテナ */
+  .quiz-container {
+    @apply card-base mx-auto max-w-2xl min-h-[400px] flex flex-col;
+  }
+
+  .quiz-content {
+    @apply flex-grow flex flex-col;
+  }
+
+  .question-wrapper {
+    @apply mb-8 flex-grow;
+  }
+
+  .progress-container {
+    @apply w-full bg-primary-100 rounded-full h-2 mb-8 overflow-hidden fixed-height;
+  }
+
+  .options-container {
+    @apply space-y-4 md:space-y-6 mt-auto;
+  }
+
+  /* その他の既存のコンテナスタイル */
   .container-base {
     @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 
            min-h-[calc(100vh-4rem)] 
@@ -34,7 +54,6 @@
            px-4 sm:px-6;
   }
 
-  /* コンテンツセクション */
   .content-section {
     @apply w-full
            flex flex-col
@@ -42,10 +61,9 @@
            relative;
   }
 
-  /* グリッドコンテナ */
   .grid-container {
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
            gap-6 sm:gap-8
            w-full;
   }
-} 
+}

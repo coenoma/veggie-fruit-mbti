@@ -19,11 +19,11 @@ function showQuestion(index) {
     questionContainer.classList.add('opacity-0', 'translate-y-4');
     
     questionContainer.innerHTML = `
-        <div class="mb-8">
+        <div class="question-wrapper">
             <h3 class="heading-2 mb-4">${question.question}</h3>
             <p class="text-gray-600 text-sm">質問 ${index + 1} / ${questions.length}</p>
         </div>
-        <div class="space-y-4 md:space-y-6">
+        <div class="options-container">
             <button onclick="submitAnswer('A')" 
                     class="w-full btn-outline transition-all duration-300 hover:scale-102 focus:outline-none focus:ring-2 focus:ring-primary-500">
                 ${question.options.A}
