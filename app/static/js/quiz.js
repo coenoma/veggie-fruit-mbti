@@ -6,10 +6,16 @@ function showQuestion(index) {
     const progressBar = document.getElementById('progress-bar');
     const question = questions[index];
     
-    // 進捗率を計算（質問数は動的）
+    // 進捗率を計算
     const progressPercentage = ((index + 1) / questions.length) * 100;
     
-    // アニメーション用のクラスを追加
+    // プログレスバーの更新（アニメーション付き）
+    progressBar.style.transition = 'width 300ms ease-out';
+    progressBar.style.width = `${progressPercentage}%`;
+    progressBar.setAttribute('aria-valuenow', progressPercentage);
+    progressBar.setAttribute('aria-valuemax', 100);
+    
+    // 質問表示を更新
     questionContainer.classList.add('opacity-0', 'translate-y-4');
     
     questionContainer.innerHTML = `
@@ -34,10 +40,6 @@ function showQuestion(index) {
         questionContainer.classList.remove('opacity-0', 'translate-y-4');
         questionContainer.classList.add('transition-all', 'duration-500', 'ease-out');
     });
-
-    // プログレスバーの更新（アニメーション付き）
-    progressBar.style.transition = 'width 0.5s ease-out';
-    progressBar.style.width = `${progressPercentage}%`;
 }
 
 function submitAnswer(answer) {
@@ -62,7 +64,7 @@ function submitAnswer(answer) {
     })
     .then(data => {
         currentQuestion++;
-        if (currentQuestion < totalQuestions) {
+        if (currentQuestion < questions.length) {
             const questionContainer = document.getElementById('question-container');
             questionContainer.classList.add('opacity-0', 'translate-y-4');
             
@@ -76,6 +78,10 @@ function submitAnswer(answer) {
     .catch(error => {
         console.error('Error:', error);
         showError('エラーが発生しました。もう一度お試しください。');
+        buttons.forEach(button => {
+            button.disabled = false;
+            button.classList.remove('opacity-50', 'cursor-not-allowed');
+        });
     });
 }
 
