@@ -1,0 +1,41 @@
+@layer components {
+  /* ベースコンテナ - すべてのページで使用する基本的なコンテナ */
+  .container-base {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 
+           min-h-[calc(100vh-4rem)] 
+           py-8 sm:py-12
+           flex flex-col items-center justify-center
+           relative z-10;
+  }
+
+  /* クイズコンテナ - クイズページ専用のスタイリング */
+  .quiz-container {
+    @apply container-base
+           max-w-3xl
+           gap-8 sm:gap-12
+           animate-fadeIn;
+  }
+
+  /* 結果ページコンテナ */
+  .result-container {
+    @apply container-base
+           max-w-3xl
+           gap-6 sm:gap-8
+           animate-slideUp;
+  }
+
+  /* コンテンツセクション */
+  .content-section {
+    @apply w-full
+           flex flex-col
+           gap-6
+           relative;
+  }
+
+  /* グリッドコンテナ */
+  .grid-container {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+           gap-6 sm:gap-8
+           w-full;
+  }
+} 

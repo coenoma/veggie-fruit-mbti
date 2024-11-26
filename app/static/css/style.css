@@ -6,6 +6,7 @@
 @import './components/_cards.css';
 @import './components/_utilities.css';
 @import './components/_animations.css';
+@import "components/_containers.css";
 
 /* 2. TailwindCSSのディレクティブを続ける */
 @tailwind base;
