@@ -1,26 +1,42 @@
 from flask import render_template, session, redirect, url_for, flash, current_app as app
 from app.blueprints.result import bp
-from app.mbti_data import personality_types
+from app.mbti_data import personality_types, questions
 
 @bp.route('/result')
 def result():
     try:
         answers = session.get('answers', [])
-        if not answers:
+        if not answers or len(answers) != len(questions):
             flash('診断を最初からやり直してください。', 'error')
             return redirect(url_for('quiz.quiz'))
         
-        # Calculate MBTI type
-        e_score = sum(1 for i, ans in enumerate(answers) if i % 4 == 0 and ans == 'A')
-        s_score = sum(1 for i, ans in enumerate(answers) if i % 4 == 1 and ans == 'A')
-        t_score = sum(1 for i, ans in enumerate(answers) if i % 4 == 2 and ans == 'A')
-        j_score = sum(1 for i, ans in enumerate(answers) if i % 4 == 3 and ans == 'A')
-
+        # Group questions and answers by type
+        type_answers = {
+            'EI': [],
+            'SN': [],
+            'TF': [],
+            'JP': []
+        }
+        
+        for i, answer in enumerate(answers):
+            q_type = questions[i].get('type')
+            if q_type:
+                type_answers[q_type].append(answer)
+        
+        # Calculate scores based on proportion for each dimension
+        scores = {
+            'EI': sum(1 for ans in type_answers['EI'] if ans == 'A'),
+            'SN': sum(1 for ans in type_answers['SN'] if ans == 'A'),
+            'TF': sum(1 for ans in type_answers['TF'] if ans == 'A'),
+            'JP': sum(1 for ans in type_answers['JP'] if ans == 'A')
+        }
+        
+        # Calculate MBTI type based on proportions
         mbti_type = ''
-        mbti_type += 'E' if e_score >= 3 else 'I'
-        mbti_type += 'S' if s_score >= 3 else 'N'
-        mbti_type += 'T' if t_score >= 3 else 'F'
-        mbti_type += 'J' if j_score >= 3 else 'P'
+        mbti_type += 'E' if scores['EI'] >= len(type_answers['EI']) / 2 else 'I'
+        mbti_type += 'S' if scores['SN'] >= len(type_answers['SN']) / 2 else 'N'
+        mbti_type += 'T' if scores['TF'] >= len(type_answers['TF']) / 2 else 'F'
+        mbti_type += 'J' if scores['JP'] >= len(type_answers['JP']) / 2 else 'P'
 
         personality = personality_types.get(mbti_type, {
             'fruit': '不明',
