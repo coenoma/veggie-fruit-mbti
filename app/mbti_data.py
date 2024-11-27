@@ -258,7 +258,10 @@ personality_types = {
         'description': '''じゃがいものように、地に足をつけた実践的な職人気質。冷静に状況を分析し、問題を解決します。
 
 特徴：
-- 物事の仕組みを理解することに長ける
+- 物事The declaration 'build' isn't referenced.
+Try removing the declaration of 'build'.dartunused_element
+⌘+click to open in new tab
+Widget build(BuildContext context)の仕組みを理解することに長ける
 - 実践的で、具体的な行動を重視
 - 落ち着いて、冷静な判断力
 - 柔軟で適応力がある

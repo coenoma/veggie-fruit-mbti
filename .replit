@@ -31,7 +31,7 @@ task = "packager.installForAll"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python main.py"
+args = "python3 main.py"
 waitForPort = 5000
 
 [[workflows.workflow]]
@@ -49,7 +49,7 @@ task = "shell.exec"
 args = "npx tailwindcss -i ./app/static/css/style.css -o ./app/static/dist/css/output.css --watch"
 
 [deployment]
-run = ["sh", "-c", "python main.py"]
+run = ["sh", "-c", "python3 main.py"]
 
 [[ports]]
 localPort = 5000
