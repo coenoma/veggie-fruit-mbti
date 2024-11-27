@@ -23,7 +23,10 @@
                     あなたの野菜・果物: {{ personality.fruit }}
                 </h2>
                 <div class="fruit-image mx-auto mb-8 animate-pulse-soft">
-                    <!-- フリーイラストが入ります -->
+                    <img src="{{ url_for('static', filename=personality.image_path) }}" 
+                         alt="{{ personality.fruit }}"
+                         class="max-h-64 mx-auto object-contain"
+                         loading="lazy">
                 </div>
                 <p class="body-regular mb-8">{{ personality.description }}</p>
 
