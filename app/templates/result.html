@@ -18,7 +18,7 @@
                          class="max-h-64 mx-auto object-contain"
                          loading="lazy">
                 </div>
-                <p class="body-regular mb-8">{{ personality.description }}</p>
+                <p class="body-regular mb-8 whitespace-pre-line">{{ personality.description | safe }}</p>
 
                 <!-- 相性診断セクション -->
                 {% if personality.compatible_types %}
