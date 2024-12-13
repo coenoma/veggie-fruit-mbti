@@ -25,11 +25,11 @@ function showQuestion(index) {
         </div>
         <div class="options-container">
             <button onclick="submitAnswer('A')" 
-                    class="w-full btn-outline transition-all duration-300 hover:scale-102 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    class="answer-button w-full btn-outline transition-all duration-300 hover:scale-102 focus:outline-none focus:ring-2 focus:ring-primary-500">
                 ${question.options.A}
             </button>
             <button onclick="submitAnswer('B')" 
-                    class="w-full btn-outline transition-all duration-300 hover:scale-102 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    class="answer-button w-full btn-outline transition-all duration-300 hover:scale-102 focus:outline-none focus:ring-2 focus:ring-primary-500">
                 ${question.options.B}
             </button>
         </div>
@@ -43,8 +43,9 @@ function showQuestion(index) {
 }
 
 function submitAnswer(answer) {
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach(button => {
+    // 回答ボタンのみを無効化
+    const answerButtons = document.querySelectorAll('.answer-button');
+    answerButtons.forEach(button => {
         button.disabled = true;
         button.classList.add('opacity-50', 'cursor-not-allowed');
     });
@@ -78,7 +79,8 @@ function submitAnswer(answer) {
     .catch(error => {
         console.error('Error:', error);
         showError('エラーが発生しました。もう一度お試しください。');
-        buttons.forEach(button => {
+        // エラー時は回答ボタンを再度有効化
+        answerButtons.forEach(button => {
             button.disabled = false;
             button.classList.remove('opacity-50', 'cursor-not-allowed');
         });
