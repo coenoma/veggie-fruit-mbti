@@ -1,5 +1,5 @@
 [build]
-  command = "pip install -r requirements.txt && npm install && npm run build-css"
+  command = "pip install -r requirements.txt"
   publish = "app/static"
   functions = "netlify/functions"
 
