@@ -98,15 +98,41 @@ function showError(message) {
 
 function showModal() {
     const modal = document.getElementById('confirmModal');
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
+    if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        // モーダル表示時に背景のスクロールを無効化
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function hideModal() {
     const modal = document.getElementById('confirmModal');
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        // モーダル非表示時に背景のスクロールを有効化
+        document.body.style.overflow = '';
+    }
 }
+
+// モーダルの外側をクリックした時にモーダルを閉じる
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('confirmModal');
+    if (modal && !modal.classList.contains('hidden')) {
+        const modalContent = modal.querySelector('.bg-white');
+        if (!modalContent.contains(event.target)) {
+            hideModal();
+        }
+    }
+});
+
+// ESCキーでモーダルを閉じる
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        hideModal();
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     showQuestion(0);

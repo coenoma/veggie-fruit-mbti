@@ -17,22 +17,22 @@
         <!-- Questions will be loaded here by JavaScript -->
     </div>
     <div class="mt-8 text-center">
-        <button onclick="showModal()" class="btn-outline text-sm">
+        <button type="button" onclick="showModal()" class="btn-outline text-sm hover:bg-gray-100 transition-colors duration-200">
             診断を中止する
         </button>
     </div>
 </div>
 
 <!-- 確認モーダル -->
-<div id="confirmModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-    <div class="bg-white rounded-2xl p-8 max-w-md mx-4 animate-fade-up">
+<div id="confirmModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-2xl p-8 max-w-md mx-4 animate-fade-up shadow-xl">
         <h3 class="heading-3 mb-4">診断を中止しますか？</h3>
         <p class="body-regular mb-6">診断を中止すると、これまでの回答は保存されません。</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onclick="hideModal()" class="btn-outline">
+            <button type="button" onclick="hideModal()" class="btn-outline hover:bg-gray-100 transition-colors duration-200">
                 診断を続ける
             </button>
-            <a href="{{ url_for('main.index') }}" class="btn-primary">
+            <a href="{{ url_for('main.index') }}" class="btn-primary hover:bg-primary-600 transition-colors duration-200">
                 診断を中止する
             </a>
         </div>
