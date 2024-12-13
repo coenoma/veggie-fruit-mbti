@@ -29,12 +29,32 @@
         />
         {% endblock %}
     </head>
-    <body class="bg-background-light font-sans antialiased">
-        <div class="container-responsive py-8">
-            <main class="focus:outline-none">
+    <body class="bg-background-light font-sans antialiased min-h-screen flex flex-col">
+        <!-- ヘッダー -->
+        <header class="bg-white shadow-sm">
+            <div class="container-responsive py-4">
+                <a href="{{ url_for('main.index') }}" class="text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors">
+                    ベジフルMBTI
+                </a>
+            </div>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main class="flex-grow">
+            <div class="container-responsive py-8">
                 {% block content %}{% endblock %}
-            </main>
-        </div>
+            </div>
+        </main>
+
+        <!-- フッター -->
+        <footer class="bg-white border-t border-gray-100">
+            <div class="container-responsive py-4">
+                <p class="text-center text-sm text-gray-500">
+                    © 2024 Coenoma LLC
+                </p>
+            </div>
+        </footer>
+
         {% block scripts %}{% endblock %}
     </body>
 </html>
