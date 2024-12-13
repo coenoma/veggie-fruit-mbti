@@ -1,13 +1,9 @@
-{% extends "layouts/base.html" %}
-
-{% block title %}野菜・果物で診断するMBTI性格診断テスト{% endblock %}
-{% block description %}あなたの性格を野菜や果物で表現するMBTI診断テスト！楽しく自分を知ろう{% endblock %}
-
-{% block content %}
+{% extends "layouts/base.html" %} {% block title
+%}野菜・果物で診断するMBTI性格診断テスト{% endblock %} {% block description
+%}あなたの性格を野菜や果物で表現するMBTI診断テスト！楽しく自分を知ろう{%
+endblock %} {% block content %}
 <div class="text-center">
-    <h1 class="heading-1">
-        あなたの性格を野菜や果物で表現してみよう！
-    </h1>
+    <h1 class="heading-1">あなたの性格を野菜や果物で表現してみよう！</h1>
     <p class="body-large mb-8">
         MBTIであなたに合う野菜・果物を見つけましょう！
     </p>
@@ -16,7 +12,7 @@
             <img
                 src="{{ url_for('static', filename='images/veggie-fruit-logo.png') }}"
                 alt="野菜と果物"
-                class="max-h-64 mx-auto mb-8 animate-pulse-soft"
+                class="max-h-64 w-[300px] mx-auto mb-8 animate-pulse-soft"
                 loading="lazy"
             />
             <p class="body-regular mb-6">
