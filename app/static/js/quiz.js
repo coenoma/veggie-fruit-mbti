@@ -43,7 +43,7 @@ function showQuestion(index) {
 }
 
 function submitAnswer(answer) {
-    // 回答ボタンのみを無効化
+    // 回答ボタンのみを無効化（診断中止ボタンには影響しない）
     const answerButtons = document.querySelectorAll('.answer-button');
     answerButtons.forEach(button => {
         button.disabled = true;
@@ -98,35 +98,46 @@ function showError(message) {
     }, 5000);
 }
 
-function showModal() {
+// モーダル関連の処理をDOMContentLoadedイベントの中に移動
+document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('confirmModal');
-    if (modal) {
+    const stopButton = document.getElementById('stopButton');
+    const continueButton = document.getElementById('continueButton');
+    const modalContent = modal.querySelector('.bg-white');
+
+    function showModal() {
         modal.classList.remove('hidden');
         modal.classList.add('flex');
-        // モーダル表示時に背景のスクロールを無効化
         document.body.style.overflow = 'hidden';
     }
-}
 
-function hideModal() {
-    const modal = document.getElementById('confirmModal');
-    if (modal) {
+    function hideModal() {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
-        // モーダル非表示時に背景のスクロールを有効化
         document.body.style.overflow = '';
     }
-}
 
-// モーダルの外側をクリックした時にモーダルを閉じる
-document.addEventListener('click', function(event) {
-    const modal = document.getElementById('confirmModal');
-    if (modal && !modal.classList.contains('hidden')) {
-        const modalContent = modal.querySelector('.bg-white');
+    // 診断中止ボタンのイベントリスナー
+    stopButton.addEventListener('click', showModal);
+
+    // 診断を続けるボタンのイベントリスナー
+    continueButton.addEventListener('click', hideModal);
+
+    // モーダルの外側をクリックした時にモーダルを閉じる
+    modal.addEventListener('click', (event) => {
         if (!modalContent.contains(event.target)) {
             hideModal();
         }
-    }
+    });
+
+    // ESCキーでモーダルを閉じる
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            hideModal();
+        }
+    });
+
+    showQuestion(0);
 });
 
 // ESCキーでモーダルを閉じる
