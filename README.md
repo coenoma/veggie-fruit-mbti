@@ -7,8 +7,6 @@
 
 ### バックエンド
 - **Flask** (Python 3.11) - 軽量で拡張性の高いWebフレームワーク
-- **SQLAlchemy** - Pythonの代表的なORMツール
-- **PostgreSQL/SQLite** - データベース（開発環境ではSQLite、本番環境ではPostgreSQL）
 
 ### フロントエンド
 - **TailwindCSS 3.4** - ユーティリティファーストのCSSフレームワーク
@@ -78,17 +76,10 @@ npm install
 `.env`ファイルを作成し、以下の環境変数を設定:
 ```bash
 FLASK_SECRET_KEY=your-secret-key           # セッション暗号化キー
-DATABASE_URL=sqlite:///mbti.db             # 開発用DB
 FLASK_ENV=development                      # 環境設定
 ```
 
 ### 開発サーバーの起動
-1. データベースの初期化
-```bash
-flask db upgrade
-```
-
-2. Flaskサーバーの起動
 ```bash
 python main.py
 ```
