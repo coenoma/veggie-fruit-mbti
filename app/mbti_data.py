@@ -1,5 +1,6 @@
 personality_types = {
     'ENTJ': {
+        'japanese_type': '指揮官',
         'fruit': 'パイナップル',
         'image_path': 'images/pineapple.png',
         'description':
@@ -22,6 +23,7 @@ personality_types = {
         '論理的思考と直感的なアイデアの相互補完により、革新的なプロジェクトを成功に導くことができます。'
     },
     'INTJ': {
+        'japanese_type': '建築家',
         'fruit': 'アボカド',
         'image_path': 'images/avocado.png',
         'description': '''アボカドのように、落ち着いた外見と豊かな内面を持つ思考家。独創的なアイデアと緻密な分析力を備えています。
@@ -42,6 +44,7 @@ personality_types = {
         'compatibility_reason': '直感的な理解と論理的な分析のバランスにより、革新的なアイデアを現実化できます。'
     },
     'ENTP': {
+        'japanese_type': '討論者',
         'fruit': 'レモン',
         'image_path': 'images/lemon.png',
         'description':
@@ -63,6 +66,7 @@ personality_types = {
         'compatibility_reason': '創造性と実践力の組み合わせにより、革新的なアイデアを実現できます。'
     },
     'INTP': {
+        'japanese_type': '論理学者',
         'fruit': 'キウイ',
         'image_path': 'images/kiwifruit.png',
         'description':
@@ -84,6 +88,7 @@ personality_types = {
         'compatibility_reason': '論理的思考と実行力の組み合わせにより、理論を実践に活かすことができます。'
     },
     'ENFJ': {
+        'japanese_type': '主人公',
         'fruit': 'マンゴー',
         'image_path': 'images/mango.png',
         'description': '''マンゴーのように、魅力的で周りを温かく包み込む性格。人々を鼓舞し、共感を生み出すカリスマ的な存在です。
@@ -104,6 +109,7 @@ personality_types = {
         'compatibility_reason': '感情的知性と論理的思考の組み合わせにより、効果的なチームビルディングが可能です。'
     },
     'INFJ': {
+        'japanese_type': '提唱者',
         'fruit': '栗',
         'image_path': 'images/chestnut.png',
         'description':
@@ -125,6 +131,7 @@ personality_types = {
         'compatibility_reason': '直感と共感の力を活かし、理想を現実に変える力を持ちます。'
     },
     'ENFP': {
+        'japanese_type': '広報運動家',
         'fruit': 'バナナ',
         'image_path': 'images/banana.png',
         'description': '''バナナのように、エネルギッシュで情熱的な性格。新しい可能性に満ち溢れ、周囲に活力を与えます。
@@ -145,6 +152,7 @@ personality_types = {
         'compatibility_reason': '情熱と計画性の組み合わせにより、創造的なアイデアを形にできます。'
     },
     'INFP': {
+        'japanese_type': '仲介者',
         'fruit': 'ブドウ',
         'image_path': 'images/grape.png',
         'description':
@@ -166,6 +174,7 @@ personality_types = {
         'compatibility_reason': '感性と行動力の組み合わせにより、理想を現実に変えることができます。'
     },
     'ESTJ': {
+        'japanese_type': '管理者',
         'fruit': 'りんご',
         'image_path': 'images/apple.png',
         'description': '''りんごのように、しっかりとした信念と実行力を持つ管理者。現実的な視点で物事を捉え、効率的に進めます。
@@ -186,6 +195,7 @@ personality_types = {
         'compatibility_reason': '実行力と創造性の組み合わせにより、効率的なプロジェクト管理が可能です。'
     },
     'ISTJ': {
+        'japanese_type': '管理者',
         'fruit': '大根',
         'image_path': 'images/daikon.png',
         'description': '''大根のように頼りがいがあり実用的な性格。誠実で責任感が強く、安定した基盤を作り上げます。
@@ -206,6 +216,7 @@ personality_types = {
         'compatibility_reason': '堅実さと創造性の組み合わせにより、アイデアを現実的な形にできます。'
     },
     'ESFJ': {
+        'japanese_type': '領事官',
         'fruit': 'いちご',
         'image_path': 'images/strawberry.png',
         'description': '''いちごのように、愛らしく人々に喜びを与える思いやり深い性格。社交的で協調性があり、周囲を明るくします。
@@ -226,6 +237,7 @@ personality_types = {
         'compatibility_reason': '感情的知性と分析力の組み合わせにより、思いやりのある効果的な解決策を生み出せます。'
     },
     'ISFJ': {
+        'japanese_type': '擁護者',
         'fruit': 'キャベツ',
         'image_path': 'images/cabbage.png',
         'description':
@@ -247,6 +259,7 @@ personality_types = {
         'compatibility_reason': '安定性と行動力の組み合わせにより、思いやりのある実践的なアプローチが可能です。'
     },
     'ESTP': {
+        'japanese_type': '起業家',
         'fruit': 'トマト',
         'image_path': 'images/tomato.png',
         'description': '''トマトのようにエネルギッシュで大胆な性格。臨機応変に状況に対応し、新しいことに挑戦します。
@@ -267,6 +280,7 @@ personality_types = {
         'compatibility_reason': '行動力と慎重さの組み合わせにより、バランスの取れた効果的な行動が可能です。'
     },
     'ISTP': {
+        'japanese_type': '匠',
         'fruit': 'じゃがいも',
         'image_path': 'images/potato.png',
         'description': '''じゃがいものように、地に足をつけた実践的な職人気質。冷静に状況を分析し、問題を解決します。
@@ -287,6 +301,7 @@ personality_types = {
         'compatibility_reason': '実践力とリーダーシップの組み合わせにより、効率的なプロジェクト遂行が可能です。'
     },
     'ESFP': {
+        'japanese_type': 'エンターテイナー',
         'fruit': 'オレンジ',
         'image_path': 'images/orange.png',
         'description': '''オレンジのように、明るく楽しい雰囲気を持つエンターテイナー。周囲を明るくし、人々を楽しませるのが得意です。
@@ -307,6 +322,7 @@ personality_types = {
         'compatibility_reason': '明るさと落ち着きの組み合わせにより、楽しく安定した環境を作り出せます。'
     },
     'ISFP': {
+        'japanese_type': '冒険家',
         'fruit': 'もも',
         'image_path': 'images/peach.png',
         'description': '''もものように、優しく繊細な感性を持つアーティスト。美しさや調和を大切にし、独自の表現方法で感動を与えます。
