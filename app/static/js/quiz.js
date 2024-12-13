@@ -96,6 +96,18 @@ function showError(message) {
     }, 5000);
 }
 
+function showModal() {
+    const modal = document.getElementById('confirmModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+}
+
+function hideModal() {
+    const modal = document.getElementById('confirmModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     showQuestion(0);
 });
