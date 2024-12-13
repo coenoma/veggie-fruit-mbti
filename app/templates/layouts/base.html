@@ -30,23 +30,25 @@
         {% endblock %}
     </head>
     <body class="bg-background-light font-sans antialiased min-h-screen flex flex-col">
-        <!-- ヘッダー -->
         <header class="bg-white shadow-sm">
             <div class="container-responsive py-4">
-                <a href="{{ url_for('main.index') }}" class="text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors">
-                    ベジフルMBTI
-                </a>
+                <nav class="flex items-center justify-between">
+                    <a href="{{ url_for('main.index') }}" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                        <img 
+                            src="{{ url_for('static', filename='images/veggie-fruit-logo.png') }}" 
+                            alt="ベジフルMBTI" 
+                            class="h-8 w-auto"
+                        />
+                        <span class="text-xl font-bold text-primary-600">ベジフルMBTI</span>
+                    </a>
+                </nav>
             </div>
         </header>
-
-        <!-- メインコンテンツ -->
-        <main class="flex-grow">
-            <div class="container-responsive py-8">
+        <div class="container-responsive py-8 flex-grow">
+            <main class="focus:outline-none">
                 {% block content %}{% endblock %}
-            </div>
-        </main>
-
-        <!-- フッター -->
+            </main>
+        </div>
         <footer class="bg-white border-t border-gray-100">
             <div class="container-responsive py-4">
                 <p class="text-center text-sm text-gray-500">
@@ -54,7 +56,6 @@
                 </p>
             </div>
         </footer>
-
         {% block scripts %}{% endblock %}
     </body>
 </html>
