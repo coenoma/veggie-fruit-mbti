@@ -1,6 +1,7 @@
 personality_types = {
     'ENTJ': {
         'fruit': 'パイナップル',
+        'image_path': 'images/pineapple.png',
         'description':
         '''パイナップルのように、外側は力強く見えても中は甘くて栄養価の高い性格。生まれながらのリーダーで、戦略的な思考の持ち主です。
 
@@ -22,6 +23,7 @@ personality_types = {
     },
     'INTJ': {
         'fruit': 'アボカド',
+        'image_path': 'images/avocado.png',
         'description': '''アボカドのように、落ち着いた外見と豊かな内面を持つ思考家。独創的なアイデアと緻密な分析力を備えています。
 
 特徴：
@@ -41,6 +43,7 @@ personality_types = {
     },
     'ENTP': {
         'fruit': 'レモン',
+        'image_path': 'images/lemon.png',
         'description':
         '''レモンのように、独特の存在感と刺激的なアイデアを持つ革新者。好奇心旺盛で、既存の枠にとらわれず新しい可能性を探求します。
 
@@ -61,6 +64,7 @@ personality_types = {
     },
     'INTP': {
         'fruit': 'キウイ',
+        'image_path': 'images/kiwifruit.png',
         'description':
         '''キウイのように、地味な見た目の中に驚くべき知性を秘めた論理的思考の持ち主。抽象的な概念や理論に興味を持ち、複雑な問題を解き明かします。
 
@@ -81,6 +85,7 @@ personality_types = {
     },
     'ENFJ': {
         'fruit': 'マンゴー',
+        'image_path': 'images/mango.png',
         'description': '''マンゴーのように、魅力的で周りを温かく包み込む性格。人々を鼓舞し、共感を生み出すカリスマ的な存在です。
 
 特徴：
@@ -100,6 +105,7 @@ personality_types = {
     },
     'INFJ': {
         'fruit': '栗',
+        'image_path': 'images/chestnut.png',
         'description':
         '''栗のように、控えめながら深い洞察力と豊かな想像力を持つ理想主義者。複雑な人間関係を理解し、他者の潜在能力を見抜きます。
 
@@ -120,6 +126,7 @@ personality_types = {
     },
     'ENFP': {
         'fruit': 'バナナ',
+        'image_path': 'images/banana.png',
         'description': '''バナナのように、エネルギッシュで情熱的な性格。新しい可能性に満ち溢れ、周囲に活力を与えます。
 
 特徴：
@@ -139,6 +146,7 @@ personality_types = {
     },
     'INFP': {
         'fruit': 'ブドウ',
+        'image_path': 'images/grape.png',
         'description':
         '''小さくても深い味わいを持つブドウのように、理想主義的で感受性豊かな性格。内面世界を重視し、独自の価値観を持ちます。
 
@@ -159,6 +167,7 @@ personality_types = {
     },
     'ESTJ': {
         'fruit': 'りんご',
+        'image_path': 'images/apple.png',
         'description': '''りんごのように、しっかりとした信念と実行力を持つ管理者。現実的な視点で物事を捉え、効率的に進めます。
 
 特徴：
@@ -178,6 +187,7 @@ personality_types = {
     },
     'ISTJ': {
         'fruit': '大根',
+        'image_path': 'images/daikon.png',
         'description': '''大根のように頼りがいがあり実用的な性格。誠実で責任感が強く、安定した基盤を作り上げます。
 
 特徴：
@@ -197,6 +207,7 @@ personality_types = {
     },
     'ESFJ': {
         'fruit': 'いちご',
+        'image_path': 'images/strawberry.png',
         'description': '''いちごのように、愛らしく人々に喜びを与える思いやり深い性格。社交的で協調性があり、周囲を明るくします。
 
 特徴：
@@ -216,6 +227,7 @@ personality_types = {
     },
     'ISFJ': {
         'fruit': 'キャベツ',
+        'image_path': 'images/cabbage.png',
         'description':
         '''キャベツのように、優しく親しみやすい性格で、人々をサポートする献身的な存在です。誠実で、安定した環境を築きます。
 
@@ -236,6 +248,7 @@ personality_types = {
     },
     'ESTP': {
         'fruit': 'トマト',
+        'image_path': 'images/tomato.png',
         'description': '''トマトのようにエネルギッシュで大胆な性格。臨機応変に状況に対応し、新しいことに挑戦します。
 
 特徴：
@@ -255,13 +268,11 @@ personality_types = {
     },
     'ISTP': {
         'fruit': 'じゃがいも',
+        'image_path': 'images/potato.png',
         'description': '''じゃがいものように、地に足をつけた実践的な職人気質。冷静に状況を分析し、問題を解決します。
 
 特徴：
-- 物事The declaration 'build' isn't referenced.
-Try removing the declaration of 'build'.dartunused_element
-⌘+click to open in new tab
-Widget build(BuildContext context)の仕組みを理解することに長ける
+- 物事の仕組みを理解することに長ける
 - 実践的で、具体的な行動を重視
 - 落ち着いて、冷静な判断力
 - 柔軟で適応力がある
@@ -277,6 +288,7 @@ Widget build(BuildContext context)の仕組みを理解することに長ける
     },
     'ESFP': {
         'fruit': 'オレンジ',
+        'image_path': 'images/orange.png',
         'description': '''オレンジのように、明るく楽しい雰囲気を持つエンターテイナー。周囲を明るくし、人々を楽しませるのが得意です。
 
 特徴：
@@ -296,6 +308,7 @@ Widget build(BuildContext context)の仕組みを理解することに長ける
     },
     'ISFP': {
         'fruit': 'もも',
+        'image_path': 'images/peach.png',
         'description': '''もものように、優しく繊細な感性を持つアーティスト。美しさや調和を大切にし、独自の表現方法で感動を与えます。
 
 特徴：
